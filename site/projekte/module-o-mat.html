@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>module-o-mat · Marcel Benders</title>
+  <meta name="description" content="Inventar der eigenen Eurorack-Module mit Hersteller, HP-Breite, Typ und Strombedarf, dazu Videos und Preisbeobachtungen.">
+  <link rel="canonical" href="https://marcelbenders.com/projekte/module-o-mat.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href=".././">Marcel Benders</a>
+      <nav aria-label="Hauptnavigation">
+        <a href=".././#projekte" aria-current="page">Projekte</a>
+        <a href="https://github.com/Marcel-B">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <a class="back" href="../#projekte">← Alle Projekte</a>
+    <h1>module-o-mat</h1>
+    <p class="lead">Ein Inventar für Eurorack-Module: was im Rack steckt, wie breit es ist, was es an Strom zieht und was es gerade wert ist.</p>
+    <ul class="links">
+      <li><a href="https://github.com/Marcel-B/module-o-mat">Quelltext auf GitHub</a></li>
+    </ul>
+    <h2>Was es kann</h2>
+    <ul>
+      <li>Module mit <b>Hersteller, Name, HP-Breite, Typ und Strombedarf</b> erfassen, nach Typ gruppiert und nach Hersteller sortiert.</li>
+      <li>Filtern nach Text, Typ und Breite, mit Statistiken über die Sammlung.</li>
+      <li>Zu jedem Modul <b>YouTube-Videos</b> und <b>Preisbeobachtungen</b>.</li>
+      <li>Module duplizieren, Sicherung als ZIP exportieren und wieder einspielen.</li>
+    </ul>
+    <h2>Technik</h2>
+    <p>Entstanden als Elixir/Phoenix-Anwendung mit LiveView, Ecto und SQLite. Daneben gibt es eine REST-API mit OpenAPI-Beschreibung, zwei Vue-3-Oberflächen und einen Port des Backends nach ASP.NET Core, der als Docker-Image veröffentlicht wird.</p>
+    <h2>Steckbrief</h2>
+    <dl class="facts">
+      <dt>Technik</dt><dd>Elixir, Phoenix LiveView, ASP.NET Core, Vue 3</dd>
+      <dt>Plattform</dt><dd>Docker im Heimnetz</dd>
+    </dl>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>© Marcel Benders</span>
+      <nav aria-label="Rechtliches">
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="https://github.com/Marcel-B/com">Quelltext dieser Seite</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ohmventory · Marcel Benders</title>
+  <meta name="description" content="Bauteile per Foto erfassen, Lagerorte mit QR-Etiketten, und ein Assistent, der aus dem Bestand Projekte vorschlägt. Mit einem lokalen LLM.">
+  <link rel="canonical" href="https://marcelbenders.com/projekte/ohmventory.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href=".././">Marcel Benders</a>
+      <nav aria-label="Hauptnavigation">
+        <a href=".././#projekte" aria-current="page">Projekte</a>
+        <a href="https://github.com/Marcel-B">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <a class="back" href="../#projekte">← Alle Projekte</a>
+    <h1>Ohmventory</h1>
+    <p class="lead">Eine Lagerverwaltung für Elektronikbauteile, die Bauteile auf Fotos erkennt und aus dem Bestand Projektideen macht, mit einem Sprachmodell im eigenen Netz.</p>
+    <ul class="links">
+      <li><a href="https://github.com/Marcel-B/Ohmventory">Quelltext auf GitHub</a></li>
+    </ul>
+    <h2>Was es kann</h2>
+    <ul>
+      <li><b>Erfassen per Foto:</b> Ein Vision-Modell erkennt Bauteil oder Breakout-Board. Ist keine Typbezeichnung lesbar, liest ein zweiter Durchgang die Aufdrucke und sucht damit im Web nach dem passenden Board; die Quellen werden angezeigt.</li>
+      <li><b>Container:</b> Lagerorte mit kurzen Codes wie <code>T-001</code>, verschachtelbar, mit druckbaren QR-Etiketten, die direkt den Inhalt zeigen.</li>
+      <li><b>Projektassistent:</b> „Kann ich ein Thermometer bauen?“ Das Modell durchsucht Lager und Web und schlägt Projekte mit Stückliste vor. Ob ein Teil da ist, entscheidet nicht das Modell, sondern ein fester Abgleich mit dem Bestand. Fehlendes landet auf Knopfdruck in der Einkaufsliste.</li>
+    </ul>
+    <h2>Technik</h2>
+    <p>ASP.NET Core (.NET 10) mit Minimal APIs, EF Core und PostgreSQL, Microsoft.Extensions.AI; ein Vue-3-Frontend mit Tailwind CSS und PrimeVue. Das Sprachmodell läuft in LM Studio auf einem Mac im Heimnetz und teilt sich den Speicher über eine Warteschlange mit anderen Anwendungen; die Websuche übernimmt SearXNG. Installiert wird das Ganze per Skript als Docker-Stack in einem Proxmox-Container.</p>
+    <h2>Steckbrief</h2>
+    <dl class="facts">
+      <dt>Technik</dt><dd>ASP.NET Core, Vue 3, PostgreSQL, Lokales LLM</dd>
+      <dt>Plattform</dt><dd>Docker, Proxmox-LXC; LLM über LM Studio</dd>
+    </dl>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>© Marcel Benders</span>
+      <nav aria-label="Rechtliches">
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="https://github.com/Marcel-B/com">Quelltext dieser Seite</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
