@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Felucca: WAVE-Engine · Marcel Benders</title>
+  <meta name="description" content="Ein Fork der Firmware Felucca mit einer vierzehnten Klangerzeugung: zwei Wavetable-Oszillatoren, acht Tabellen und Dubstep-Bässe.">
+  <link rel="canonical" href="https://marcelbenders.com/projekte/felucca.html">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href=".././">Marcel Benders</a>
+      <nav aria-label="Hauptnavigation">
+        <a href=".././#projekte" aria-current="page">Projekte</a>
+        <a href="https://github.com/Marcel-B">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <a class="back" href="../#projekte">← Alle Projekte</a>
+    <h1>Felucca: WAVE-Engine</h1>
+    <p class="lead">Felucca ist eine freie Multi-Engine-Firmware für den kleinen Synthesizer M-VAVE FM-1. In meinem Fork kommt eine vierzehnte Engine dazu: WAVE.</p>
+    <ul class="links">
+      <li><a href="https://github.com/Marcel-B/Felucca">Mein Fork auf GitHub</a></li>
+      <li><a href="https://github.com/hugelton/Felucca">Original von Hugelton</a></li>
+    </ul>
+    <h2>Die WAVE-Engine</h2>
+    <ul>
+      <li><b>Zwei Wavetable-Oszillatoren</b> und das Filter der ANALOG-Engine (Tiefpass, Bandpass, Hochpass).</li>
+      <li><b>Acht Tabellen</b> mit je acht Einzelzyklen, aus Formeln erzeugt statt aus fremden Wavetables: BASIC, PWM, SYNC, VOX, ORGAN, FM, HARM und DIGI, bandbegrenzt pro Oktave.</li>
+      <li><b>POS</b> blendet durch die Tabelle; Hüllkurve, LFO und Modulationsmatrix können es bewegen, ein synchronisierter LFO wird so zum Wobble.</li>
+      <li><b>Zwölf Presets</b> von WOBBLE, GROWL und RIDDIM bis PPG PAD, VOX PAD und PWM LEAD.</li>
+    </ul>
+    <p>Alles andere ist die Firmware von Hugelton; dort gibt es auch den Web-Installer und eine Version zum Ausprobieren im Browser.</p>
+    <h2>Technik</h2>
+    <p>C für den Mikrocontroller des FM-1, die Tabellen mit einem Python-Skript generiert.</p>
+    <h2>Steckbrief</h2>
+    <dl class="facts">
+      <dt>Technik</dt><dd>C, Embedded, DSP</dd>
+      <dt>Hardware</dt><dd>M-VAVE FM-1</dd>
+      <dt>Lizenz</dt><dd>GNU GPL v3 (wie das Original)</dd>
+    </dl>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>© Marcel Benders</span>
+      <nav aria-label="Rechtliches">
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="https://github.com/Marcel-B/com">Quelltext dieser Seite</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
