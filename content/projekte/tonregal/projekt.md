@@ -39,6 +39,8 @@ features:
   verhalten:
   - Gefunden über gleiche Dateien, gleiche Aufnahmen oder gleiche Titel mit gleicher Länge.
   - Jede Fassung lässt sich kurz anhören, bevor man entscheidet.
+  - "*Alle Vorschläge übernehmen* entscheidet nach einer Bestätigung mit Anzahl alle Gruppen auf einmal nach dem Vorschlag.
+    Selbst geänderte Gruppen bleiben dabei unberührt, nur über Titel und Länge gefundene nur auf ausdrücklichen Wunsch."
   - Aussortiertes geht für 30 Tage in einen Papierkorb.
 - titel: Analyse
   wozu: Tempo, Tonart und Lautstärke kennen, ohne nachzumessen.
