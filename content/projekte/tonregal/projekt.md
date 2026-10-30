@@ -31,6 +31,9 @@ steckbrief:
 - Beim **Übernehmen** schreibt Tonregal Tags und Cover und legt die Datei in eine feste Ordnerstruktur:
   `Künstler/Jahr - Album/NN - Titel`. Das Original wird erst gelöscht, wenn die neue Datei geprüft ist.
 - Ein **Altbestand** alter MP3-Kopien lässt sich in einem Rutsch abgleichen, ohne dass dort etwas verändert wird.
+  Ist er abgearbeitet, räumt **Erledigtes aufräumen** ihn auf: Tonregal zeigt, welche alten Dateien nachweislich in der
+  Bibliothek angekommen sind, und verschiebt nach einer Bestätigung genau diese in den Papierkorb. Was sich seit dem
+  Abgleich geändert hat oder in der Bibliothek nicht mehr zu finden ist, bleibt liegen.
 - **Dubletten** findet Tonregal über gleiche Dateien, gleiche Aufnahmen oder gleiche Titel mit gleicher Länge. Man hört
   jede Fassung kurz an und behält die bessere; der Rest geht für 30 Tage in einen Papierkorb.
 
