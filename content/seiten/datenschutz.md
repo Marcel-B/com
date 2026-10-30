@@ -5,7 +5,7 @@ beschreibung: Datenschutzerklärung von marcelbenders.com
 
 ## Kurz gesagt
 
-Diese Seite setzt keine Cookies, zählt keine Besucher und lädt nichts von Dritten nach, auch keine Schriften: Die Schrift Ubuntu liegt auf demselben Server wie die Seite. Es gibt kein Kontaktformular und kein Konto.
+Diese Seite setzt keine Cookies, zählt keine Besucher und lädt nichts von Dritten nach, auch keine Schriften: Die Schrift Ubuntu liegt auf demselben Server wie die Seite. Es gibt kein Kontaktformular und kein Konto. Wählst du ein Farbschema, merkt sich das nur dein eigener Browser (im lokalen Speicher); es wird nirgendwohin übertragen.
 
 ## Verantwortlicher
 

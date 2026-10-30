@@ -2,10 +2,10 @@
 name: fil-o-mat
 untertitel: Filamentspulen mit NFC
 reihenfolge: 60
+vision: Jede Filamentspule soll wissen, wo sie liegt und wie viel noch drauf ist. fil-o-mat soll das Filamentlager so
+  selbstverständlich machen wie ein Etikett, mit einem Scan statt einer Tabelle.
 kurz: Container und Filamentspulen mit RFID/NFC-Tags verwalten, per App einlagern und herausnehmen, Verbrauch direkt vom 3D-Drucker
   buchen.
-einleitung: Apps für Android, iOS und das Web, mit denen sich Filamentspulen und ihre Behälter über NFC-Tags verwalten lassen,
-  bis hin zum Verbrauch am Drucker.
 technik:
 - Kotlin
 - SwiftUI
@@ -15,6 +15,32 @@ technik:
 links:
 - text: Quelltext auf GitHub
   url: https://github.com/Marcel-B/fil-o-mat
+features:
+- titel: Container und Spulen
+  wozu: Jede Spule und jede Kiste eindeutig erkennen.
+  verhalten:
+  - Container und Spulen werden angelegt und mit RFID/NFC-Tags versehen.
+- titel: Einlagern und Herausnehmen
+  wozu: Wissen, wo eine Spule liegt, ohne etwas aufzuschreiben.
+  verhalten:
+  - Ein Scan genügt, erst der Container, dann die Spule, oder umgekehrt.
+- titel: Offene Tags
+  wozu: Tags, die nicht an eine App gebunden sind.
+  verhalten:
+  - Tags werden im offenen OpenSpool-Format gelesen und beschrieben.
+  - Android- und iOS-App erkennen Tags über dieselbe UID.
+- titel: NFC-Leser am Drucker
+  wozu: Der Verbrauch landet von selbst auf der richtigen Spule.
+  verhalten:
+  - Ein ESP32 meldet, welches Musterplättchen in welchem Slot steckt.
+  - Das Backend bucht den Verbrauch, den PrusaLink, Bambu oder Anycubic melden, auf die passende Spule.
+- titel: Web-Oberfläche
+  wozu: Das Lager auch am Rechner im Blick haben.
+  verhalten:
+  - Eine Oberfläche im Browser, ausgeliefert mit dem Backend.
+roadmap:
+  als_naechstes:
+  - 'Lokalisierung: Apps und Web-Oberfläche in weiteren Sprachen'
 steckbrief:
 - name: Plattform
   wert: Android, iOS, Web; Backend in Docker
@@ -22,13 +48,8 @@ steckbrief:
   wert: Apache 2.0
 ---
 
-## Was es kann
-
-- **Container und Spulen** anlegen und mit RFID/NFC-Tags versehen.
-- **Einlagern und Herausnehmen** per Scan: erst den Container, dann die Spule, oder umgekehrt.
-- Tags **lesen und beschreiben**, im offenen OpenSpool-Format; beide Apps erkennen Tags über dieselbe UID.
-- **NFC-Leser am Drucker:** Ein ESP32 meldet, welches Musterplättchen in welchem Slot steckt. Das Backend bucht den Verbrauch, den PrusaLink, Bambu oder Anycubic melden, auf die passende Spule.
-
 ## Technik
 
-Android-App in Kotlin mit Jetpack Compose, iOS-App in Swift mit SwiftUI und CoreNFC, eine Web-Oberfläche mit Vue 3 und PrimeVue. Das gemeinsame Backend ist ASP.NET Core (.NET 10) mit SQLite im Docker-Container. Die Leser am Drucker sind ESP32-Boards mit RC522- oder PN532-Modulen, konfiguriert mit ESPHome.
+Android-App in Kotlin mit Jetpack Compose, iOS-App in Swift mit SwiftUI und CoreNFC, eine Web-Oberfläche mit Vue 3 und
+PrimeVue. Das gemeinsame Backend ist ASP.NET Core (.NET 10) mit SQLite im Docker-Container. Die Leser am Drucker sind
+ESP32-Boards mit RC522- oder PN532-Modulen, konfiguriert mit ESPHome.

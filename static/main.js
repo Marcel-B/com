@@ -1,10 +1,49 @@
-// The page's only script: fades elements in as they come into view and lets a light follow the pointer over the
-// project cards. Everything works without it; with reduced motion it does nothing.
+// The page's only script, apart from the line in every page's head that applies a stored colour scheme before anything
+// is drawn. It offers the colour scheme switch, fades elements in as they come into view and lets a light follow the
+// pointer over the project cards. Everything works without it; with reduced motion only the switch remains.
 (() => {
-  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches || !("IntersectionObserver" in window)) return;
-  document.documentElement.classList.add("js");
+  const root = document.documentElement;
+  const motion = !window.matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window;
+  if (motion) root.classList.add("js");
 
   document.addEventListener("DOMContentLoaded", () => {
+    setUpTheme();
+    if (motion) setUpMotion();
+  });
+
+  // System, light or dark. "System" removes the choice, so the stylesheet follows prefers-color-scheme again.
+  function setUpTheme() {
+    const group = document.querySelector(".theme");
+    if (!group) return;
+    const colours = { light: "#f6f6f3", dark: "#0e1014" };
+    const metas = document.querySelectorAll('meta[name="theme-color"]');
+    const show = (choice) => {
+      group.querySelectorAll("button").forEach((button) => {
+        button.setAttribute("aria-pressed", String(button.dataset.themeChoice === choice));
+      });
+      metas.forEach((meta) => {
+        meta.content = colours[choice] || (meta.media.includes("dark") ? colours.dark : colours.light);
+      });
+    };
+    let stored = null;
+    try { stored = localStorage.getItem("theme"); } catch { /* storage blocked: the choice lasts for this page only */ }
+    show(stored === "light" || stored === "dark" ? stored : "system");
+    group.hidden = false;
+    group.addEventListener("click", (event) => {
+      const button = event.target.closest("button");
+      if (!button) return;
+      const choice = button.dataset.themeChoice;
+      if (choice === "system") delete root.dataset.theme;
+      else root.dataset.theme = choice;
+      try {
+        if (choice === "system") localStorage.removeItem("theme");
+        else localStorage.setItem("theme", choice);
+      } catch { /* see above */ }
+      show(choice);
+    });
+  }
+
+  function setUpMotion() {
     const observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (!entry.isIntersecting) continue;
@@ -40,5 +79,5 @@
         card.style.setProperty("--y", `${event.clientY - box.top}px`);
       });
     });
-  });
+  }
 })();
