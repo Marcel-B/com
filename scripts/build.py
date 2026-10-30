@@ -13,6 +13,7 @@ Every content error stops the build with the file's name, so a pull request with
 """
 
 import datetime
+import hashlib
 import html
 import json
 import re
@@ -36,6 +37,15 @@ PERSON = {
     "sameAs": ["https://github.com/Marcel-B", "https://b-velop.com/", "https://tonwerk.studio/", "https://slipways.de/"],
 }
 SLUG = re.compile(r"^[a-z0-9]+(-[a-z0-9]+)*$")
+
+
+def asset(name):
+    """The address of a file in static/ with a hash of its content, so a browser that cached the old one (GitHub Pages
+    allows ten minutes) loads a changed style or script at once instead of mixing it with new markup."""
+    digest = hashlib.sha256((ROOT / "static" / name).read_bytes()).hexdigest()[:10]
+    return f"/{name}?v={digest}"
+
+
 MONTHS = ["Januar", "Februar", "März", "April", "Mai", "Juni", "Juli", "August", "September", "Oktober", "November", "Dezember"]
 
 
@@ -172,9 +182,9 @@ def layout(url, title, description, main, nav=None, jsonld=None, og_type="websit
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="/fonts/ubuntu/ubuntu-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="{asset('style.css')}">
   <link rel="alternate" type="application/atom+xml" title="Neues von Marcel Benders" href="/feed.xml">{ld}
-  <script src="/main.js" defer></script>
+  <script src="{asset('main.js')}" defer></script>
 </head>
 <body>
   <a class="skip" href="#inhalt">Zum Inhalt</a>
