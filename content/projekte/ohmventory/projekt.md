@@ -22,7 +22,8 @@ features:
   - Ist keine Typbezeichnung lesbar, liest ein zweiter Durchgang die Aufdrucke und sucht damit im Web nach dem passenden
     Board.
   - Die Quellen werden angezeigt.
-  - Fotos kommen als JPEG, PNG oder WebP, direkt von der Handykamera oder als Datei.
+  - Fotos kommen als JPEG, PNG, WebP oder HEIC, direkt von der Handykamera oder als Datei.
+  - HEIC-Fotos vom iPhone wandelt der Server in JPEG um, richtig gedreht und ohne Metadaten wie den Aufnahmeort.
 - titel: Container
   wozu: Wissen, in welcher Kiste ein Teil liegt.
   verhalten:
@@ -41,8 +42,6 @@ features:
   - Neue Versionen spielt ein Timer alle fünf Minuten ein, aber nur, wenn alle automatischen Tests grün sind.
   - Startet eine neue Version nicht, kehrt der Container von selbst zur vorherigen zurück.
 roadmap:
-  jetzt:
-  - HEIC-Fotos vom iPhone annehmen und umwandeln
   als_naechstes:
   - 'Lokalisierung: die Oberfläche in weiteren Sprachen'
 steckbrief:
