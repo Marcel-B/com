@@ -74,6 +74,7 @@ features:
   verhalten:
   - Keeps playing reliably in the background, in Control Centre, with AirPods and AirPlay.
   - With lyrics, stars and shuffle.
+  - New tracks show up by themselves when the app is opened again; lists and albums can also be pulled down to reload.
 - titel: Interface for handing over
   wozu: Tracks of your own go straight into the library.
   verhalten:

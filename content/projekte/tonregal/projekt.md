@@ -81,6 +81,8 @@ features:
   verhalten:
   - Spielt im Hintergrund, im Kontrollzentrum, mit AirPods und AirPlay zuverlässig weiter.
   - Mit Songtexten, Sternen und Zufall.
+  - Neue Titel erscheinen von selbst, sobald man die App wieder öffnet; Listen und Alben lassen sich zusätzlich nach
+    unten ziehen, um sie neu zu laden.
 - titel: Schnittstelle zum Übernehmen
   wozu: Eigene Stücke landen direkt in der Bibliothek.
   verhalten:
