@@ -22,11 +22,16 @@ features:
     MusicBrainz erkannt.
   - Eindeutige Treffer sind sofort bereit, alles andere landet mit Begründung in einer Prüfliste.
   - Die Prüfliste lässt sich per Tastatur abarbeiten und bleibt dank Seiten auch bei tausend Dateien flüssig.
+  - "*Alle zu prüfenden übernehmen* fasst die Prüfliste nach Grund zusammen, etwa „Dauer passt zu keinem Treffer“. Nach
+    einer Bestätigung gehen die gewählten Gründe mit ihrem Vorschlag in die Bibliothek, Dateien ohne Vorschlag auf Wunsch
+    mit ihren eigenen Tags. Jede Datei wird dabei noch einmal geprüft."
 - titel: Übernehmen
   wozu: Jedes Stück liegt an seinem festen Platz, richtig getaggt und mit Cover.
   verhalten:
   - Tonregal schreibt Tags und Cover und legt die Datei unter `Künstler/Jahr - Album/NN - Titel` ab.
   - Das Original wird erst gelöscht, wenn die neue Datei geprüft ist.
+  - Scheitert die Übernahme, steht der Grund gesammelt über der Liste, und die Datei lässt sich mit ihren eigenen Tags
+    übernehmen.
 - titel: Altbestand
   wozu: Alte MP3-Kopien in einem Rutsch einbringen, ohne das Durcheinander noch größer zu machen.
   verhalten:

@@ -15,11 +15,15 @@ features:
     and MusicBrainz.
   - Clear matches are ready at once; everything else goes to a review list with the reason.
   - The review list works by keyboard and stays smooth with a thousand files thanks to paging.
+  - "*Accept everything to review* groups the review list by reason, such as “length matches no result”. After a
+    confirmation the chosen reasons go into the library with their suggestion, files without one optionally with their
+    own tags. Every file is checked once more on the way."
 - titel: Filing
   wozu: Every track sits in its fixed place, properly tagged and with its cover.
   verhalten:
   - Tonregal writes tags and cover and files the track under `Artist/Year - Album/NN - Title`.
   - The original is deleted only once the new file has been checked.
+  - If filing fails, the reason is shown collected above the list, and the file can be filed with its own tags.
 - titel: Old collection
   wozu: Bring in old MP3 copies in one go without making the mess any bigger.
   verhalten:
