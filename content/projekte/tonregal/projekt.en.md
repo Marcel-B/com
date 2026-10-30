@@ -32,6 +32,8 @@ features:
   verhalten:
   - Found by identical files, identical recordings or identical titles of the same length.
   - Each version can be listened to briefly before you decide.
+  - "*Accept all suggestions* decides every group at once after a confirmation that shows the count. Groups you changed
+    yourself are left alone, those found only by title and length are included only if you ask for it."
   - What is sorted out goes to a bin for 30 days.
 - titel: Analysis
   wozu: Know tempo, key and loudness without measuring.
