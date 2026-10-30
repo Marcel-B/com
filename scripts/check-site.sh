@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Checks the built site before it is published: every local link and picture exists, every page links the imprint and
-# the privacy page, every project has a card on the start page, and every page has what search engines read
+# the privacy page in its language, every project has a card on both start pages, and every page has what search engines read
 # (title, description, canonical address, Open Graph picture, an entry in sitemap.xml, valid JSON-LD).
 #
 #   python3 scripts/build.py && scripts/check-site.sh [folder]
@@ -21,8 +21,10 @@ while IFS= read -r page; do
       failed=1
     fi
   done
+  prefix=""
+  [[ "$name" == en/* ]] && prefix="/en"
   for legal in impressum.html datenschutz.html; do
-    if ! grep -q "href=\"/$legal\"" "$page"; then
+    if ! grep -q "href=\"$prefix/$legal\"" "$page"; then
       echo "$name verlinkt $legal nicht." >&2
       failed=1
     fi
@@ -46,9 +48,13 @@ for project in "$site"/projekte/*/; do
     echo "index.html stellt $slug nicht vor." >&2
     failed=1
   fi
+  if ! grep -q "href=\"/en/projekte/$slug/\"" "$site/en/index.html"; then
+    echo "en/index.html stellt $slug nicht vor." >&2
+    failed=1
+  fi
 done
 
-for file in og.png robots.txt sitemap.xml feed.xml CNAME fonts/ubuntu/LICENCE.txt; do
+for file in og.png robots.txt sitemap.xml feed.xml en/feed.xml CNAME fonts/ubuntu/LICENCE.txt; do
   if [[ ! -f "$site/$file" ]]; then
     echo "$file fehlt." >&2
     failed=1
@@ -71,7 +77,7 @@ for page in pathlib.Path(sys.argv[1]).rglob("*.html"):
         except ValueError as error:
             print(f"{page.name}: JSON-LD kaputt: {error}", file=sys.stderr)
             ok = False
-for name in ("sitemap.xml", "feed.xml"):
+for name in ("sitemap.xml", "feed.xml", "en/feed.xml"):
     xml.dom.minidom.parse(str(pathlib.Path(sys.argv[1]) / name))
 sys.exit(0 if ok else 1)
 PY

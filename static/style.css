@@ -1,5 +1,6 @@
 /* marcelbenders.com: one stylesheet for every page. Headings in Ubuntu, served from this site (no font service sees a
-   visitor), text in the system font; light and dark follow the system. Motion stays slow and small, and stops under
+   visitor), text in the system font; light and dark follow the system unless the visitor picks one (html[data-theme], set by
+   the script in every page's head before anything is drawn). Motion stays slow and small, and stops under
    prefers-reduced-motion. */
 
 @font-face {
@@ -39,7 +40,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --background: #0e1014;
     --panel: #161920;
     --border: #262a33;
@@ -52,8 +53,27 @@
     --done: #4ade80;
     --doing: #fbbf24;
     --planned: #a5b4fc;
+    color-scheme: dark;
   }
 }
+
+:root[data-theme="dark"] {
+  --background: #0e1014;
+  --panel: #161920;
+  --border: #262a33;
+  --text: #e7e8ea;
+  --muted: #9aa0ab;
+  --accent: #5eead4;
+  --accent-2: #60a5fa;
+  --accent-soft: #134e4a;
+  --glow: rgba(94, 234, 212, 0.12);
+  --done: #4ade80;
+  --doing: #fbbf24;
+  --planned: #a5b4fc;
+  color-scheme: dark;
+}
+
+:root[data-theme="light"] { color-scheme: light; }
 
 * { box-sizing: border-box; }
 
@@ -130,6 +150,29 @@ pre code { border: 0; padding: 0; background: none; }
 }
 .top nav a:hover, .top nav a[aria-current] { color: var(--text); }
 .top nav a:hover::after, .top nav a[aria-current]::after { transform: scaleX(1); }
+
+.tools { display: flex; align-items: center; gap: 12px; }
+.lang { font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--muted); text-decoration: none; padding: 4px 9px; border: 1px solid var(--border); border-radius: 8px; }
+.lang:hover { color: var(--text); border-color: var(--accent); }
+.theme { display: flex; padding: 2px; border: 1px solid var(--border); border-radius: 9px; }
+.theme[hidden] { display: none; }
+.theme button {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 26px;
+  padding: 0;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.theme button:hover { color: var(--text); }
+.theme button[aria-pressed="true"] { background: var(--accent-soft); color: var(--text); }
+.theme svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 .foot { border-top: 1px solid var(--border); margin-top: 88px; padding: 24px 0 40px; color: var(--muted); font-size: 14px; }
 .foot .wrap { display: flex; gap: 16px 24px; flex-wrap: wrap; }
@@ -362,6 +405,35 @@ h2.section::after { content: ""; flex: 1; height: 1px; background: var(--border)
 .lane.geplant h3, .lane.geplant li::marker { color: var(--planned); }
 .plain { padding-left: 18px; font-size: 15.5px; }
 
+/* Features: what a project does, each with the behaviour it promises, written like a specification. */
+.features { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 14px; margin-top: 14px; }
+.feature {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 18px 20px;
+  transition: border-color 0.25s ease;
+}
+.feature:hover { border-color: color-mix(in srgb, var(--accent) 60%, var(--border)); }
+.page .feature h3 { margin: 0 0 6px; font-size: 18px; }
+.feature p { margin: 0; color: var(--muted); font-size: 15.5px; }
+.rules { margin: 12px 0 0; padding: 10px 0 0; border-top: 1px dashed var(--border); list-style: none; font-size: 14.5px; }
+.page .rules li { position: relative; padding-left: 22px; margin-bottom: 5px; }
+.rules li::before { content: "✓"; position: absolute; left: 2px; color: var(--accent); font-weight: 700; }
+
+.roadmap { margin-top: 36px; }
+.roadmap h2 { margin-bottom: 2px; }
+.hint { margin: 0; color: var(--muted); font-size: 15px; }
+.phases { position: relative; }
+.phases .lane { padding-top: 14px; border-top: 3px solid var(--border); }
+.lane.jetzt { border-top-color: var(--doing); }
+.lane.als_naechstes { border-top-color: var(--planned); }
+.lane.spaeter { border-top-color: var(--muted); }
+.lane.jetzt h3, .lane.jetzt li::marker { color: var(--doing); }
+.lane.als_naechstes h3, .lane.als_naechstes li::marker { color: var(--planned); }
+.lane.spaeter h3, .lane.spaeter li::marker { color: var(--muted); }
+.other-lang { color: var(--muted); font: 400 13px var(--sans); }
+
 .facts { display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; margin: 0; }
 .facts dt { color: var(--muted); }
 .facts dd { margin: 0; }
@@ -388,7 +460,9 @@ h2.section::after { content: ""; flex: 1; height: 1px; background: var(--border)
 
 @media (max-width: 600px) {
   .hero { padding: 64px 0 48px; }
-  .top nav { margin-left: 0; width: 100%; gap: 16px; }
+  .top nav { margin-left: 0; width: 100%; gap: 16px; order: 3; }
+  .top .wrap { gap: 8px 12px; padding-top: 8px; padding-bottom: 6px; }
+  .tools { margin-left: auto; gap: 8px; }
   .facts { grid-template-columns: 1fr; gap: 0; }
   .facts dd { margin-bottom: 10px; }
   .report { align-items: flex-start; }

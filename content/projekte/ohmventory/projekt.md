@@ -2,10 +2,10 @@
 name: Ohmventory
 untertitel: Lager für Elektronikbauteile
 reihenfolge: 50
+vision: Wer Elektronik bastelt, soll wissen, was in den Kisten liegt, und darauf kommen, was sich daraus bauen lässt.
+  Ohmventory soll die Bastelkiste zum Sprechen bringen, mit einer KI, die im eigenen Netz bleibt.
 kurz: Bauteile per Foto erfassen, Lagerorte mit QR-Etiketten, und ein Assistent, der aus dem Bestand Projekte vorschlägt.
   Mit einem lokalen LLM.
-einleitung: Eine Lagerverwaltung für Elektronikbauteile, die Bauteile auf Fotos erkennt und aus dem Bestand Projektideen macht,
-  mit einem Sprachmodell im eigenen Netz.
 technik:
 - ASP.NET Core
 - Vue 3
@@ -14,17 +14,36 @@ technik:
 links:
 - text: Quelltext auf GitHub
   url: https://github.com/Marcel-B/Ohmventory
+features:
+- titel: Erfassen per Foto
+  wozu: Ein Bauteil einlagern, ohne Datenblätter abzutippen.
+  verhalten:
+  - Ein Vision-Modell erkennt Bauteil oder Breakout-Board auf dem Foto.
+  - Ist keine Typbezeichnung lesbar, liest ein zweiter Durchgang die Aufdrucke und sucht damit im Web nach dem passenden
+    Board.
+  - Die Quellen werden angezeigt.
+- titel: Container
+  wozu: Wissen, in welcher Kiste ein Teil liegt.
+  verhalten:
+  - Lagerorte mit kurzen Codes wie `T-001`, beliebig verschachtelbar.
+  - Druckbare QR-Etiketten, die direkt den Inhalt zeigen.
+- titel: Projektassistent
+  wozu: Aus dem Bestand Ideen machen, zum Beispiel auf die Frage „Kann ich ein Thermometer bauen?“
+  verhalten:
+  - Das Modell durchsucht Lager und Web und schlägt Projekte mit Stückliste vor.
+  - Ob ein Teil da ist, entscheidet nicht das Modell, sondern ein fester Abgleich mit dem Bestand.
+  - Fehlendes landet auf Knopfdruck in der Einkaufsliste.
+roadmap:
+  als_naechstes:
+  - 'Lokalisierung: die Oberfläche in weiteren Sprachen'
 steckbrief:
 - name: Plattform
   wert: Docker, Proxmox-LXC; LLM über LM Studio
 ---
 
-## Was es kann
-
-- **Erfassen per Foto:** Ein Vision-Modell erkennt Bauteil oder Breakout-Board. Ist keine Typbezeichnung lesbar, liest ein zweiter Durchgang die Aufdrucke und sucht damit im Web nach dem passenden Board; die Quellen werden angezeigt.
-- **Container:** Lagerorte mit kurzen Codes wie `T-001`, verschachtelbar, mit druckbaren QR-Etiketten, die direkt den Inhalt zeigen.
-- **Projektassistent:** „Kann ich ein Thermometer bauen?“ Das Modell durchsucht Lager und Web und schlägt Projekte mit Stückliste vor. Ob ein Teil da ist, entscheidet nicht das Modell, sondern ein fester Abgleich mit dem Bestand. Fehlendes landet auf Knopfdruck in der Einkaufsliste.
-
 ## Technik
 
-ASP.NET Core (.NET 10) mit Minimal APIs, EF Core und PostgreSQL, Microsoft.Extensions.AI; ein Vue-3-Frontend mit Tailwind CSS und PrimeVue. Das Sprachmodell läuft in LM Studio auf einem Mac im Heimnetz und teilt sich den Speicher über eine Warteschlange mit anderen Anwendungen; die Websuche übernimmt SearXNG. Installiert wird das Ganze per Skript als Docker-Stack in einem Proxmox-Container.
+ASP.NET Core (.NET 10) mit Minimal APIs, EF Core und PostgreSQL, Microsoft.Extensions.AI; ein Vue-3-Frontend mit Tailwind
+CSS und PrimeVue. Das Sprachmodell läuft in LM Studio auf einem Mac im Heimnetz und teilt sich den Speicher über eine
+Warteschlange mit anderen Anwendungen; die Websuche übernimmt SearXNG. Installiert wird das Ganze per Skript als
+Docker-Stack in einem Proxmox-Container.

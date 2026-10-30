@@ -1,7 +1,8 @@
 # marcelbenders.com
 
-Die Website [marcelbenders.com](https://marcelbenders.com/): Marcels Projekte mit ihrem Wasserstand (wie weit sie sind,
-was geplant ist) und Anleitungen, wie man sie selbst aufsetzt und nutzt.
+Die Website [marcelbenders.com](https://marcelbenders.com/): Marcels Projekte mit ihrer Vision, ihren Funktionen und
+ihrer Roadmap, dem Wasserstand (wie weit sie sind) und Anleitungen, wie man sie selbst aufsetzt und nutzt. Auf Deutsch
+und unter `/en/` auf Englisch, hell, dunkel oder wie das System.
 
 **Inhalte ergänzen:** siehe [CONTRIBUTING.md](CONTRIBUTING.md). Jedes Projekt kann dort eigene Wasserstandsmeldungen
 und Anleitungen als Markdown einreichen.
@@ -10,8 +11,8 @@ und Anleitungen als Markdown einreichen.
 
 | Ordner | Inhalt |
 | --- | --- |
-| `content/projekte/<projekt>/` | `projekt.md`, `stand/*.md` (Wasserstandsmeldungen), `anleitungen/*.md` |
-| `content/seiten/` | Impressum, Datenschutz |
+| `content/projekte/<projekt>/` | `projekt.md`, `stand/*.md` (Wasserstandsmeldungen), `anleitungen/*.md`, jeweils mit `*.en.md` daneben |
+| `content/seiten/` | Impressum, Datenschutz, beide auch auf Englisch |
 | `static/` | wird unverändert übernommen: `style.css`, `main.js`, Schrift, Bilder, `og.png`, `CNAME` |
 | `scripts/build.py` | baut alles nach `_site/` (Python mit Markdown und PyYAML aus `requirements.txt`) |
 | `scripts/check-site.sh` | prüft `_site/`: Links, Rechtliches, SEO-Angaben, Sitemap, JSON-LD |
@@ -40,9 +41,16 @@ von Fontsource übernehmen.
 Jede Seite bekommt einen eigenen Titel, eine Beschreibung, eine `canonical`-Adresse, Open Graph mit `og.png`
 (1200 × 630) und strukturierte Daten nach schema.org (Startseite: `WebSite`, `Person`, `ItemList`; Projekte:
 `SoftwareSourceCode`, bei Apps `SoftwareApplication`; Meldungen: `BlogPosting`; Anleitungen: `TechArticle`; dazu
-`BreadcrumbList`). `sitemap.xml`, `robots.txt` und der Atom-Feed `feed.xml` entstehen beim Bauen. Nach dem ersten
+`BreadcrumbList`). Jede Seite verweist mit `hreflang` auf ihre andere Sprache. `sitemap.xml`, `robots.txt` und die
+Atom-Feeds `feed.xml` und `en/feed.xml` entstehen beim Bauen. Nach dem ersten
 Deploy die Seite in der [Google Search Console](https://search.google.com/search-console) anmelden und die Sitemap
 einreichen.
+
+## Farbschema
+
+Oben rechts wählt man System, Hell oder Dunkel. Die Wahl liegt nur im `localStorage` des Browsers (Schlüssel `theme`)
+und wird von einer Zeile im Kopf jeder Seite gesetzt, bevor etwas gezeichnet wird; ohne JavaScript folgt die Seite dem
+System. Die Datenschutzerklärung erwähnt das.
 
 ## Veröffentlichen
 
