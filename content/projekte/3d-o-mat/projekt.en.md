@@ -45,9 +45,13 @@ features:
   verhalten:
   - All models run locally on a Mac; the files are kept on a drive of its own.
   - If the drive is not there, the site accepts nothing.
+- titel: German or English, light or dark
+  wozu: Use the site in your own language and the colour scheme you are used to.
+  verhalten:
+  - The interface is available in German and English; without a choice it follows the browser's language.
+  - Gemma checks pictures and answers in the chosen language.
+  - The colour scheme is light, dark or follows the system; the browser remembers both choices.
 roadmap:
-  jetzt:
-  - The interface in English, plus light, dark or following the system
   als_naechstes:
   - 'Localisation: server messages and error texts in English too'
 steckbrief:

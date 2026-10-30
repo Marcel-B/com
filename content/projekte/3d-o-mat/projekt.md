@@ -53,9 +53,13 @@ features:
   verhalten:
   - Alle Modelle laufen lokal auf einem Mac; die Dateien liegen auf einer eigenen Platte.
   - Ist die Platte nicht da, nimmt die Seite nichts an.
+- titel: Deutsch oder Englisch, hell oder dunkel
+  wozu: Die Seite in der eigenen Sprache und dem gewohnten Farbschema benutzen.
+  verhalten:
+  - Die Oberfläche gibt es auf Deutsch und Englisch; ohne Wahl folgt sie der Sprache des Browsers.
+  - Gemma prüft Bilder und antwortet in der gewählten Sprache.
+  - Das Farbschema ist hell, dunkel oder folgt dem System; beide Wahlen merkt sich der Browser.
 roadmap:
-  jetzt:
-  - Oberfläche auf Englisch, dazu hell, dunkel oder nach dem System
   als_naechstes:
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
 steckbrief:
