@@ -99,6 +99,8 @@ roadmap:
   - Der große Player im Browser wird ausprobiert
   - Die iPhone- und iPad-App im Test über TestFlight
   - Den abgearbeiteten Altbestand mit einem Knopf aufräumen, nur was nachweislich in der Bibliothek liegt
+  - 'Überwachung: Inbox, Scans, Analyse, Backup und das Protokoll auf einer gemeinsamen Übersicht, mit Alarm, wenn das
+    Backup ausbleibt; gebaut, noch nicht im Betrieb'
   als_naechstes:
   - In der iPhone-App Playlists, Offline-Wiedergabe und CarPlay
   - 'Lokalisierung: Web-Player und App in weiteren Sprachen'
