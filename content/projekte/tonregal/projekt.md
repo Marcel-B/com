@@ -49,6 +49,10 @@ steckbrief:
 
 - Ein **Web-Player** mit Warteschlange, Steuerung über Sperrbildschirm und Kopfhörertasten, Sternebewertung, Zufall für
   Album, Interpret oder die ganze Bibliothek und Wiederholen. Im iPhone-Safari lässt er sich auf den Home-Bildschirm legen.
+- Ein **großer Player** über den ganzen Bildschirm, wie in [Tonwerk-AI](/projekte/tonwerk-ai/) und der iPhone-App: das
+  Cover groß auf einem unscharfen Hintergrund in seinen Farben, Sterne, Fortschritt mit Restzeit, Songtext neben oder
+  statt des Covers und die Warteschlange, die sich per Ziehen umsortieren lässt. Nach dem Neuladen geht es an derselben
+  Stelle im Stück weiter. Der große Player ist neu und wird gerade ausprobiert.
 - **Songtexte** laufen mit, wenn es synchronisierte gibt; ein Tipp auf eine Zeile springt dorthin. Sie kommen aus der
   Datei selbst, einer `.lrc` daneben oder von [lrclib.net](https://lrclib.net).
 - **Smart Playlists** nach Regeln wie BPM-Bereich, Tonart (auch passende Tonarten zum Mixen), Genre, neu, nie gehört
