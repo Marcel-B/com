@@ -14,6 +14,7 @@ features:
   - A vision model recognises the component or breakout board in the photo.
   - If no type designation is legible, a second pass reads the markings and searches the web for the matching board.
   - The sources are shown.
+  - Photos come as JPEG, PNG or WebP, straight from the phone camera or as a file.
 - titel: Containers
   wozu: Know which box a part is in.
   verhalten:
@@ -25,12 +26,20 @@ features:
   - The model searches your stock and the web and suggests projects with a parts list.
   - Whether a part is there is decided not by the model but by a fixed match against the stock.
   - Missing parts go to the shopping list at the press of a button.
+- titel: Installation and updates
+  wozu: Run Ohmventory on your own network without having to look after every new version.
+  verhalten:
+  - A script sets up the whole Docker stack in a Proxmox container.
+  - A timer installs new versions every five minutes, but only when all automated tests are green.
+  - If a new version does not start, the container goes back to the previous one by itself.
 roadmap:
+  jetzt:
+  - Accept HEIC photos from the iPhone and convert them
   als_naechstes:
   - 'Localisation: the interface in more languages'
 steckbrief:
 - name: Platform
-  wert: Docker, Proxmox LXC; LLM via LM Studio
+  wert: Docker, Proxmox LXC or Mac; LLM via LM Studio
 ---
 
 ## Technology
@@ -38,4 +47,4 @@ steckbrief:
 ASP.NET Core (.NET 10) with Minimal APIs, EF Core and PostgreSQL, Microsoft.Extensions.AI; a Vue 3 frontend with Tailwind
 CSS and PrimeVue. The language model runs in LM Studio on a Mac on the home network and shares its memory with other
 applications through a queue; SearXNG handles web search. The whole thing is installed by a script as a Docker stack in a
-Proxmox container.
+Proxmox container. If all you have is a Mac, you can run everything on it; the guide below shows how.
