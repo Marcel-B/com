@@ -1,4 +1,4 @@
-# The website marcelbenders.com from site/ on GitHub Pages, set up like tonwerk.studio (Marcel-B/Synth). Pull requests
+# The website marcelbenders.com, built from content/ and static/ by scripts/build.py, on GitHub Pages, set up like tonwerk.studio (Marcel-B/Synth). Pull requests
 # only check the site; a push to main publishes it.
 name: Website
 
@@ -20,12 +20,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+      - run: pip install -r requirements.txt
+      - name: Seite bauen
+        run: python3 scripts/build.py _site
       - name: Seite prüfen
-        run: scripts/check-site.sh
+        run: scripts/check-site.sh _site
       - if: github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
-          path: site
+          path: _site
 
   deploy:
     if: github.event_name != 'pull_request'
