@@ -3,11 +3,118 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Marcel Benders · Projekte</title>
-  <meta name="description" content="Die Projekte von Marcel Benders: Tonwerk-AI, Tonregal, Ohmventory, fil-o-mat, module-o-mat und eine Wavetable-Engine für Felucca.">
+  <title>Marcel Benders: Softwareentwickler und seine Projekte</title>
+  <meta name="description" content="Marcel Benders, Softwareentwickler aus Krefeld: Projekte wie Tonwerk-AI, die Tonwerk-Plugins, Slipways, Tonregal, Ohmventory und fil-o-mat, mit Quelltext auf GitHub.">
+  <meta name="author" content="Marcel Benders">
+  <meta name="theme-color" content="#0e1014">
   <link rel="canonical" href="https://marcelbenders.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Marcel Benders">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Marcel Benders: Softwareentwickler und seine Projekte">
+  <meta property="og:description" content="Marcel Benders, Softwareentwickler aus Krefeld: Projekte wie Tonwerk-AI, die Tonwerk-Plugins, Slipways, Tonregal, Ohmventory und fil-o-mat, mit Quelltext auf GitHub.">
+  <meta property="og:url" content="https://marcelbenders.com/">
+  <meta property="og:image" content="https://marcelbenders.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://marcelbenders.com/#site",
+      "url": "https://marcelbenders.com/",
+      "name": "Marcel Benders",
+      "inLanguage": "de",
+      "publisher": {
+        "@id": "https://marcelbenders.com/#person"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://marcelbenders.com/#person",
+      "name": "Marcel Benders",
+      "url": "https://marcelbenders.com/",
+      "jobTitle": "Softwareentwickler",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Krefeld",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://github.com/Marcel-B",
+        "https://b-velop.com/",
+        "https://tonwerk.studio/",
+        "https://slipways.de/"
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "name": "Projekte",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "url": "https://marcelbenders.com/projekte/tonwerk-ai.html",
+          "name": "Tonwerk-AI"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "url": "https://marcelbenders.com/projekte/tonwerk.html",
+          "name": "Tonwerk"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "url": "https://marcelbenders.com/projekte/slipways.html",
+          "name": "Slipways"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "url": "https://marcelbenders.com/projekte/tonregal.html",
+          "name": "Tonregal"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "url": "https://marcelbenders.com/projekte/ohmventory.html",
+          "name": "Ohmventory"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "url": "https://marcelbenders.com/projekte/fil-o-mat.html",
+          "name": "fil-o-mat"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "url": "https://marcelbenders.com/projekte/module-o-mat.html",
+          "name": "module-o-mat"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "url": "https://marcelbenders.com/projekte/microfrontend.html",
+          "name": "Microfrontend-Plattform"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "url": "https://marcelbenders.com/projekte/felucca.html",
+          "name": "Felucca: WAVE-Engine"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="top">
@@ -23,7 +130,7 @@
   <main class="wrap">
     <div class="hero">
       <h1>Marcel Benders</h1>
-      <p>Softwareentwickler aus Krefeld. Hier stehen die Projekte, an denen ich in meiner freien Zeit baue: Musik, Werkstatt und Heimnetz, fast alles mit offenem Quelltext auf GitHub.</p>
+      <p>Softwareentwickler aus Krefeld. Hier stehen die Projekte, an denen ich in meiner freien Zeit baue: Musik, Werkstatt und Heimnetz, fast alles mit Quelltext auf GitHub.</p>
     </div>
 
     <h2 class="section" id="projekte">Projekte</h2>
@@ -33,6 +140,20 @@
           <p class="what">Musik mit lokalen KI-Modellen</p>
           <p>Songs, Stimmen, Cover und Videos mit Modellen, die auf dem eigenen Mac laufen, bedient vom Handy, aus dem Browser oder mit nativen Apps.</p>
           <ul class="tags"><li>ASP.NET Core</li><li>Vue 3</li><li>SwiftUI</li><li>Python</li><li>MLX</li></ul>
+          <span class="more">Mehr erfahren →</span>
+        </a>
+        <a class="card" href="projekte/tonwerk.html">
+          <h3>Tonwerk</h3>
+          <p class="what">Synthesizer und Effekte für Logic Pro, VST3 und iPad</p>
+          <p>14 Instrumente, 17 Effekte und zwei MIDI-Effekte aus eigenem Code: als Audio Unit und VST3 kostenlos, auf dem iPad als App im App Store.</p>
+          <ul class="tags"><li>C++</li><li>JUCE</li><li>DSP</li><li>AUv3</li><li>VST3</li></ul>
+          <span class="more">Mehr erfahren →</span>
+        </a>
+        <a class="card" href="projekte/slipways.html">
+          <h3>Slipways</h3>
+          <p class="what">Slipanlagen und Marinas in Europa</p>
+          <p>Bootsrampen und Marinas in Deutschland und Europa auf der Karte, mit aktuellen Pegelständen, Gewässerverläufen und Beiträgen der Nutzer. Web, Android und iOS.</p>
+          <ul class="tags"><li>ASP.NET Core</li><li>React</li><li>Kotlin</li><li>SwiftUI</li><li>OpenStreetMap</li></ul>
           <span class="more">Mehr erfahren →</span>
         </a>
         <a class="card" href="projekte/tonregal.html">
@@ -63,6 +184,13 @@
           <ul class="tags"><li>Elixir</li><li>Phoenix LiveView</li><li>ASP.NET Core</li><li>Vue 3</li></ul>
           <span class="more">Mehr erfahren →</span>
         </a>
+        <a class="card" href="projekte/microfrontend.html">
+          <h3>Microfrontend-Plattform</h3>
+          <p class="what">Microfrontends mit Vue, React und .NET</p>
+          <p>Eine Plattform für Microfrontends mit .NET-BFFs, Module Federation, Anmeldung über OpenID Connect und zwei gleichwertigen Varianten in Vue und React.</p>
+          <ul class="tags"><li>ASP.NET Core</li><li>YARP</li><li>Vue 3</li><li>React</li><li>Module Federation</li></ul>
+          <span class="more">Mehr erfahren →</span>
+        </a>
         <a class="card" href="projekte/felucca.html">
           <h3>Felucca: WAVE-Engine</h3>
           <p class="what">Synthesizer-Firmware für das M-VAVE FM-1</p>
@@ -74,7 +202,6 @@
 
     <h2 class="section">Außerdem</h2>
     <ul class="also">
-      <li><a href="https://tonwerk.studio/">tonwerk.studio</a>: Synthesizer und Effekte für Logic Pro und VST3, eine iPad-App und ein Eurorack-Modul.</li>
       <li><a href="https://b-velop.com/">b-velop.com</a>: freiberufliche Softwareentwicklung.</li>
     </ul>
   </main>

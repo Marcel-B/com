@@ -10,4 +10,6 @@ Published by `.github/workflows/pages.yml` on GitHub Pages from main; `site/CNAM
   (light and dark through `prefers-color-scheme`).
 - Project texts are written from the projects' READMEs for visitors: what it does, then the technology. Leave out
   internal hostnames, IPs, Tailnet names and keys.
+- SEO: every page keeps its own `<title>`, description, canonical, Open Graph tags (picture `site/og.png`) and schema.org
+  JSON-LD; a new page goes into `site/sitemap.xml` (the check fails otherwise), `404.html` uses absolute links and `noindex`.
 - Commit messages and branch names are German.

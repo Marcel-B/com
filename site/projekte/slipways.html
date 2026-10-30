@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Slipways: Slipanlagen und Marinas in Europa · Marcel Benders</title>
+  <meta name="description" content="Bootsrampen und Marinas in Deutschland und Europa auf der Karte, mit aktuellen Pegelständen, Gewässerverläufen und Beiträgen der Nutzer. Web, Android und iOS.">
+  <meta name="author" content="Marcel Benders">
+  <meta name="theme-color" content="#0e1014">
+  <link rel="canonical" href="https://marcelbenders.com/projekte/slipways.html">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="Marcel Benders">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:title" content="Slipways: Slipanlagen und Marinas in Europa · Marcel Benders">
+  <meta property="og:description" content="Bootsrampen und Marinas in Deutschland und Europa auf der Karte, mit aktuellen Pegelständen, Gewässerverläufen und Beiträgen der Nutzer. Web, Android und iOS.">
+  <meta property="og:url" content="https://marcelbenders.com/projekte/slipways.html">
+  <meta property="og:image" content="https://marcelbenders.com/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="../style.css">
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareSourceCode",
+      "name": "Slipways",
+      "description": "Bootsrampen und Marinas in Deutschland und Europa auf der Karte, mit aktuellen Pegelständen, Gewässerverläufen und Beiträgen der Nutzer. Web, Android und iOS.",
+      "url": "https://marcelbenders.com/projekte/slipways.html",
+      "codeRepository": "https://github.com/Marcel-B/Slipways",
+      "keywords": "ASP.NET Core, React, Kotlin, SwiftUI, OpenStreetMap",
+      "author": {
+        "@id": "https://marcelbenders.com/#person"
+      },
+      "inLanguage": "de"
+    },
+    {
+      "@type": "SoftwareApplication",
+      "name": "Slipways",
+      "description": "Bootsrampen und Marinas in Deutschland und Europa auf der Karte, mit aktuellen Pegelständen, Gewässerverläufen und Beiträgen der Nutzer. Web, Android und iOS.",
+      "url": "https://slipways.de/",
+      "applicationCategory": "TravelApplication",
+      "operatingSystem": "Web, Android, iOS",
+      "author": {
+        "@id": "https://marcelbenders.com/#person"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "EUR"
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Projekte",
+          "item": "https://marcelbenders.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Slipways",
+          "item": "https://marcelbenders.com/projekte/slipways.html"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://marcelbenders.com/#person",
+      "name": "Marcel Benders",
+      "url": "https://marcelbenders.com/",
+      "jobTitle": "Softwareentwickler",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Krefeld",
+        "addressCountry": "DE"
+      },
+      "sameAs": [
+        "https://github.com/Marcel-B",
+        "https://b-velop.com/",
+        "https://tonwerk.studio/",
+        "https://slipways.de/"
+      ]
+    }
+  ]
+}
+  </script>
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <a class="brand" href=".././">Marcel Benders</a>
+      <nav aria-label="Hauptnavigation">
+        <a href=".././#projekte" aria-current="page">Projekte</a>
+        <a href="https://github.com/Marcel-B">GitHub</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap page">
+    <a class="back" href="../#projekte">← Alle Projekte</a>
+    <h1>Slipways</h1>
+    <p class="lead">Slipways sammelt Slipanlagen (Bootsrampen) und Marinas in Deutschland und weiteren Ländern Europas, damit man vor der Fahrt weiß, wo das Boot ins Wasser kommt und wie hoch das Wasser gerade steht.</p>
+    <ul class="links">
+      <li><a href="https://slipways.de/">slipways.de</a></li>
+      <li><a href="https://github.com/Marcel-B/Slipways">Quelltext auf GitHub</a></li>
+    </ul>
+    <h2>Was es kann</h2>
+    <ul>
+      <li><b>Karte und Listen</b> mit Slipanlagen, Marinas, Gewässern und Motorservices, die Liste immer passend zum Kartenausschnitt.</li>
+      <li><b>Pegelstände</b> alle 15 Minuten aus PEGELONLINE und, für die Niederlande, von Rijkswaterstaat.</li>
+      <li><b>Gewässerverläufe</b> von Flüssen, Kanälen und Seen aus OpenStreetMap.</li>
+      <li>Slipanlagen und Marinas aus <b>OpenStreetMap</b> importiert und mit Angaben von den Webseiten der Marinas ergänzt.</li>
+      <li><b>Beiträge ohne Konto:</b> Angaben ergänzen, Ausstattung ankreuzen, Tipps geben, fehlende Slipanlagen vorschlagen. Alles geht erst nach Freigabe online, gegen Missbrauch schützt ein Proof of Work ohne Cookies und ohne fremde Dienste.</li>
+      <li><b>Apps für Android und iOS</b> mit denselben Inhalten.</li>
+    </ul>
+    <h2>Technik</h2>
+    <p>Backend mit ASP.NET Core Minimal APIs (.NET 10), EF Core und SQLite; das Web mit React 19, Vite, TanStack Query und Leaflet, für Suchmaschinen serverseitig mit Titeln und strukturierten Daten versorgt. Die Android-App ist in Kotlin mit Jetpack Compose geschrieben, die iOS-App in SwiftUI mit MapKit. Betrieb in Docker.</p>
+    <h2>Steckbrief</h2>
+    <dl class="facts">
+      <dt>Technik</dt><dd>ASP.NET Core, React, Kotlin, SwiftUI, OpenStreetMap</dd>
+      <dt>Plattform</dt><dd>Web, Android, iOS</dd>
+      <dt>Lizenz</dt><dd>PolyForm Strict 1.0.0 (Quelltext einsehbar)</dd>
+    </dl>
+  </main>
+
+  <footer class="foot">
+    <div class="wrap">
+      <span>© Marcel Benders</span>
+      <nav aria-label="Rechtliches">
+        <a href="../impressum.html">Impressum</a>
+        <a href="../datenschutz.html">Datenschutz</a>
+        <a href="https://github.com/Marcel-B/com">Quelltext dieser Seite</a>
+      </nav>
+    </div>
+  </footer>
+</body>
+</html>
