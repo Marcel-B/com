@@ -27,7 +27,8 @@ steckbrief:
 
 - Die **Inbox überwachen**: Neue Dateien und Ordner (auch per Drag & Drop im Browser hochgeladen) werden per
   Audio-Fingerprint (AcoustID) und MusicBrainz erkannt. Eindeutige Treffer sind sofort bereit, alles andere landet mit
-  Begründung in einer Prüfliste, die sich auch per Tastatur abarbeiten lässt.
+  Begründung in einer Prüfliste, die sich auch per Tastatur abarbeiten lässt. Lange Listen zeigt sie seitenweise, damit
+  auch tausend Dateien auf einmal flüssig bleiben.
 - Beim **Übernehmen** schreibt Tonregal Tags und Cover und legt die Datei in eine feste Ordnerstruktur:
   `Künstler/Jahr - Album/NN - Titel`. Das Original wird erst gelöscht, wenn die neue Datei geprüft ist.
 - Ein **Altbestand** alter MP3-Kopien lässt sich in einem Rutsch abgleichen, ohne dass dort etwas verändert wird.
