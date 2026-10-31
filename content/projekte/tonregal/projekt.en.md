@@ -91,6 +91,8 @@ roadmap:
   - The full-screen player in the browser is being tried out
   - The iPhone and iPad app in testing via TestFlight
   - Clean up the processed old collection with one button, only what is provably in the library
+  - 'Monitoring: inbox, scans, analysis, backup and the log on a shared overview, with an alert when the backup does not
+    run; built, not yet in operation'
   als_naechstes:
   - Playlists, offline playback and CarPlay in the iPhone app
   - 'Localisation: web player and app in more languages'
