@@ -39,8 +39,11 @@ features:
   verhalten:
   - Eine Oberfläche im Browser, ausgeliefert mit dem Backend.
 roadmap:
+  jetzt:
+  - 'Lokalisierung: Apps und Web-Oberfläche auf Deutsch und Englisch'
+  - Heller und dunkler Modus oder wie das System, in den Einstellungen wählbar
   als_naechstes:
-  - 'Lokalisierung: Apps und Web-Oberfläche in weiteren Sprachen'
+  - 'Öffentlicher TestFlight-Link: wer mag, kann die iOS-App vorab testen'
 steckbrief:
 - name: Plattform
   wert: Android, iOS, Web; Backend in Docker
