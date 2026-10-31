@@ -8,6 +8,7 @@ content/projekte/<slug>/stand/<datum>.md      a status report ("Wasserstandsmeld
 content/projekte/<slug>/stand/<datum>.en.md   its English version (optional)
 content/projekte/<slug>/anleitungen/*.md      tutorials of that project, English beside them as <name>.en.md (optional)
 content/seiten/*.md, *.en.md                  plain pages (Impressum, Datenschutz), both languages
+content/links.yml                             proper names (tools, products) linked where they first appear in a page's text
 static/                                       copied as it is (styles, script, fonts, pictures, CNAME)
 
 An English page has the German one's path under /en/. A report or tutorial without an English version is listed on
@@ -29,6 +30,8 @@ from pathlib import Path
 
 import markdown
 import yaml
+from markdown.treeprocessors import Treeprocessor
+from xml.etree import ElementTree
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = "https://marcelbenders.com"
@@ -74,6 +77,10 @@ T = {
         "no_reports": "Noch keine Meldungen.", "no_guides": "Noch keine Anleitungen.",
         "notfound": "Seite nicht gefunden", "notfound_lead": "Diese Adresse gibt es hier nicht (mehr).",
         "notfound_button": "Zur Startseite mit allen Projekten", "notfound_description": "Diese Seite gibt es auf marcelbenders.com nicht.",
+        "ad": "Anzeige", "ad_title": "Partnerlink",
+        "partner_note": "Mit „Anzeige“ markierte Links sind Partnerlinks: Kaufst du darüber etwas, bekomme ich eine kleine "
+                        "Provision. Für dich ändert sich am Preis nichts, und was ich empfehle, hängt nicht davon ab. "
+                        'Mehr dazu im <a href="/datenschutz.html#partnerlinks">Datenschutz</a>.',
     },
     "en": {
         "locale": "en_GB", "skip": "Skip to content", "main_nav": "Main navigation", "legal_nav": "Legal",
@@ -104,6 +111,10 @@ T = {
         "no_reports": "No reports yet.", "no_guides": "No guides yet.",
         "notfound": "Page not found", "notfound_lead": "This address does not exist here (any more).",
         "notfound_button": "To the start page with all projects", "notfound_description": "This page does not exist on marcelbenders.com.",
+        "ad": "ad", "ad_title": "Affiliate link",
+        "partner_note": "Links marked “ad” are affiliate links: if you buy something through one, I receive a small commission. "
+                        "The price stays the same for you, and it does not decide what I recommend. "
+                        'More in the <a href="/en/datenschutz.html#partnerlinks">privacy notice</a>.',
     },
 }
 
@@ -150,8 +161,122 @@ def read(path, required):
     return meta, match.group(2)
 
 
-def render(text):
-    return markdown.markdown(text, extensions=["extra", "sane_lists", "toc"], output_format="html")
+def render(text, lang=None):
+    """Markdown to HTML. With a language, the text is prose of a project, report or tutorial: the proper names from
+    content/links.yml are linked where they first appear, and a page with an affiliate link says what that is."""
+    if lang is None:
+        return markdown.markdown(text, extensions=["extra", "sane_lists", "toc"], output_format="html")
+    linker = NameLinker(lang)
+    md = markdown.Markdown(extensions=["extra", "sane_lists", "toc"], output_format="html")
+    md.treeprocessors.register(linker, "names", 5)  # after the inline patterns (20), so existing links are elements
+    result = md.convert(text)
+    if linker.partner:
+        result += f'\n<p class="partner-note">{T[lang]["partner_note"]}</p>'
+    return result
+
+
+# Proper names (content/links.yml), loaded by load_names() before anything is rendered.
+NAMES = []
+NAME_PATTERN = None
+NO_LINKS = {"a", "code", "pre", "kbd", "h1", "h2", "h3", "h4", "h5", "h6"}
+
+
+def load_names():
+    """The names to link: each entry has `name`, `url`, optionally `auch` (further spellings) and `partner: true` for an
+    affiliate link, which is marked as an ad (and needs the privacy page's section on affiliate links)."""
+    global NAMES, NAME_PATTERN
+    path = ROOT / "content/links.yml"
+    if not path.exists():
+        return
+    try:
+        entries = yaml.safe_load(path.read_text(encoding="utf-8")) or []
+    except yaml.YAMLError as error:
+        fail(path, f"kein gültiges YAML: {error}")
+    if not isinstance(entries, list):
+        fail(path, "muss eine Liste von Einträgen mit 'name' und 'url' sein")
+    seen = {}
+    for i, entry in enumerate(entries):
+        if not isinstance(entry, dict) or not entry.get("name") or not entry.get("url"):
+            fail(path, f"Eintrag {i + 1} braucht 'name' und 'url'")
+        if not re.match(r"^https://[^\s]+$", str(entry["url"])):
+            fail(path, f"'{entry['name']}': die Adresse muss mit https:// beginnen")
+        if set(entry) - {"name", "url", "auch", "partner"}:
+            fail(path, f"'{entry['name']}' kennt nur name, url, auch und partner")
+        spellings = [str(entry["name"])] + [str(n) for n in entry.get("auch") or []]
+        for spelling in spellings:
+            if spelling in seen:
+                fail(path, f"'{spelling}' steht zweimal drin")
+            seen[spelling] = entry
+        entry["names"] = spellings
+        entry["partner"] = entry.get("partner") is True
+    if any(entry["partner"] for entry in entries):
+        for privacy in ("datenschutz.md", "datenschutz.en.md"):
+            if 'id="partnerlinks"' not in render((ROOT / "content/seiten" / privacy).read_text(encoding="utf-8")):
+                fail(path, f"Partnerlinks brauchen in content/seiten/{privacy} einen Abschnitt '## … {{#partnerlinks}}'")
+    NAMES = entries
+    if seen:
+        # Longest first, so "Docker Desktop" wins over "Docker". A name may be followed by a hyphen ("ESPHome-Datei").
+        alternatives = "|".join(re.escape(n) for n in sorted(seen, key=len, reverse=True))
+        NAME_PATTERN = (re.compile(rf"(?<![\w-])({alternatives})(?!\w)"), seen)
+
+
+class NameLinker(Treeprocessor):
+    """Links the first appearance of every known name in a page's text, outside code, headings and existing links. A
+    name the text already links (by address or link text) is left alone."""
+
+    def __init__(self, lang):
+        super().__init__()
+        self.lang = lang
+        self.partner = False
+
+    def run(self, root):
+        if NAME_PATTERN is None:
+            return
+        self.done = set()
+        for a in root.iter("a"):
+            href = (a.get("href") or "").rstrip("/")
+            text = "".join(a.itertext())
+            for entry in NAMES:
+                if str(entry["url"]).rstrip("/") == href or text in entry["names"]:
+                    self.done.add(entry["name"])
+        self.walk(root)
+
+    def walk(self, element):
+        if element.text:
+            element.text = self.link(element, element.text, 0)
+        index = 0
+        while index < len(element):
+            child = element[index]
+            if child.tag not in NO_LINKS:
+                self.walk(child)
+            index += 1
+            if child.tail:
+                before = len(element)
+                child.tail = self.link(element, child.tail, index)
+                index += len(element) - before
+
+    def link(self, parent, text, index):
+        """Links names in text that sits at position index of parent; returns what stays in front of the first link."""
+        pattern, entries = NAME_PATTERN
+        for match in pattern.finditer(text):
+            entry = entries[match.group(1)]
+            if entry["name"] in self.done:
+                continue
+            self.done.add(entry["name"])
+            a = ElementTree.Element("a", {"href": str(entry["url"])})
+            a.text = match.group(1)
+            new = [a]
+            if entry["partner"]:
+                self.partner = True
+                a.set("rel", "sponsored nofollow")
+                mark = ElementTree.Element("small", {"class": "ad", "title": T[self.lang]["ad_title"]})
+                mark.text = T[self.lang]["ad"]
+                new.append(mark)
+            for offset, item in enumerate(new):
+                parent.insert(index + offset, item)
+            new[-1].tail = (new[-1].tail or "") + self.link(parent, text[match.end():], index + len(new))
+            return text[:match.start()]
+        return text
 
 
 def inline(text):
@@ -529,7 +654,7 @@ def project_page(project, lang):
 {chr(10).join(guide_item(g, lang) for g in project["guides"])}
       </div>
     </section>"""
-    prose = f'\n    <div class="prose">\n{render(text["body"])}\n    </div>' if text["body"].strip() else ""
+    prose = f'\n    <div class="prose">\n{render(text["body"], lang)}\n    </div>' if text["body"].strip() else ""
     main = f"""  <article class="wrap page">
     <a class="back" href="{at(lang, "/#projekte")}">{t["all_projects"]}</a>
     <p class="eyebrow">{e(text["untertitel"])}</p>
@@ -572,7 +697,7 @@ def report_page(report, lang):
     <div class="status-head">{gauge(text, lang)}<p class="lead">{inline(summary)}</p></div>
     {lanes(((key, text[key]) for key in LANES), lang)}
     <div class="prose">
-{render(text["body"])}
+{render(text["body"], lang)}
     </div>
   </article>"""
     ld = {"@context": "https://schema.org", "@graph": [
@@ -598,7 +723,7 @@ def guide_page(guide, lang):
     <h1>{e(text["titel"])}</h1>
     <p class="lead">{e(text["beschreibung"])}</p>
     <div class="prose">
-{render(text["body"])}
+{render(text["body"], lang)}
     </div>
   </article>"""
     ld = {"@context": "https://schema.org", "@graph": [
@@ -728,6 +853,7 @@ def feed(reports, guides, lang):
 
 
 def build(out):
+    load_names()
     projects, pages = load()
     reports = sorted((r for p in projects for r in p["reports"]), key=lambda r: r["date"], reverse=True)
     guides = sorted((g for p in projects for g in p["guides"]), key=lambda g: g["date"], reverse=True)

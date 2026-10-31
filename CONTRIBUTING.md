@@ -193,6 +193,30 @@ Optional weitere Abschnitte als Markdown, etwa Technik oder ein Leitprinzip. Sie
 - Für ein neues Projekt den Ordner mit beiden Dateien anlegen; die Karten auf beiden Startseiten und alle Verweise
   entstehen von selbst.
 
+## Eigennamen verlinken
+
+Werkzeuge, Dienste und Produkte, die in Texten vorkommen (ESPHome, Tailscale, Nextcloud, …), verlinkt die Seite selbst.
+Die Liste steht in `content/links.yml`: Name und offizielle Adresse, optional weitere Schreibweisen.
+
+```yaml
+- name: ESPHome
+  url: https://esphome.io/
+```
+
+- Verlinkt wird in Anleitungen, Wasserstandsmeldungen und im Markdown-Teil der Projektseiten, in beiden Sprachen,
+  jeweils nur das erste Vorkommen auf einer Seite. Überschriften, Code und Text, der schon ein Link ist, bleiben unberührt;
+  verlinkt der Text den Namen schon selbst, kommt kein zweiter Link dazu.
+- Groß- und Kleinschreibung zählt, und der Name muss als ganzes Wort dastehen („ESPHome-Datei“ zählt, „Pythonista“
+  nicht). Kommt ein Name neu in einer Anleitung vor, trag ihn in die Liste ein, statt ihn im Text von Hand zu verlinken.
+- Nur die offizielle Seite des Herstellers oder Projekts, immer `https://`, ohne Tracking-Parameter.
+
+**Partnerlinks (Affiliate).** Ein Eintrag mit `partner: true` ist ein Partnerlink: Er bekommt `rel="sponsored nofollow"`
+und das Zeichen „Anzeige“ („ad“), und unter dem Text erklärt ein Satz, was das bedeutet. Partner-IDs stehen nur in
+`content/links.yml`, nie im Text einer Anleitung, und nur mit `partner: true`. Vor dem ersten Partnerlink braucht die
+Datenschutzerklärung (`content/seiten/datenschutz.md` und `.en.md`) einen Abschnitt `## Partnerlinks {#partnerlinks}`,
+der das Partnerprogramm mit Anbieter nennt und sagt, was beim Klick übertragen wird (viele Programme schreiben einen
+eigenen Wortlaut vor); ohne ihn bricht der Build ab.
+
 ## Für Claude in einem anderen Repository
 
 Wenn du in einem Projekt-Repository arbeitest und die Seite ergänzen sollst:
