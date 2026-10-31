@@ -94,6 +94,11 @@ roadmap:
   - 'Monitoring: inbox, scans, analysis, backup and the log on a shared overview, with an alert when the backup does not
     run; built, not yet in operation'
   als_naechstes:
+  - 'Your own playlists: put together, sort and play by hand, alongside the smart playlists'
+  - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
+    the change goes into the file'
+  - 'Ratings without Navidrome: Tonregal keeps the stars itself and writes them into the file, existing ones are
+    carried over'
   - Playlists, offline playback and CarPlay in the iPhone app
   - 'Localisation: web player and app in more languages'
 steckbrief:

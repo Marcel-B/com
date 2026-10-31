@@ -102,6 +102,11 @@ roadmap:
   - 'Überwachung: Inbox, Scans, Analyse, Backup und das Protokoll auf einer gemeinsamen Übersicht, mit Alarm, wenn das
     Backup ausbleibt; gebaut, noch nicht im Betrieb'
   als_naechstes:
+  - 'Eigene Playlists: von Hand zusammenstellen, sortieren und abspielen, neben den Smart Playlists'
+  - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
+    Album; die Änderung landet in der Datei'
+  - 'Bewertung ohne Navidrome: Tonregal hält die Sterne selbst und schreibt sie in die Datei, die vorhandenen werden
+    übernommen'
   - In der iPhone-App Playlists, Offline-Wiedergabe und CarPlay
   - 'Lokalisierung: Web-Player und App in weiteren Sprachen'
 steckbrief:
