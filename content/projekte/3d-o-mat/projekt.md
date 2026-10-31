@@ -64,7 +64,7 @@ roadmap:
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
 steckbrief:
 - name: Plattform
-  wert: Web; Docker in einem Proxmox-Container, Rechnen auf einem Mac mit Apple Silicon
+  wert: Web; Docker in einem Proxmox-Container oder direkt auf einem Mac, Rechnen auf einem Mac mit Apple Silicon
 - name: Lizenz
   wert: MIT
 ---

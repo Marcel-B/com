@@ -56,7 +56,7 @@ roadmap:
   - 'Localisation: server messages and error texts in English too'
 steckbrief:
 - name: Platform
-  wert: Web; Docker in a Proxmox container, computing on a Mac with Apple silicon
+  wert: Web; Docker in a Proxmox container or directly on a Mac, computing on a Mac with Apple silicon
 - name: Licence
   wert: MIT
 ---
