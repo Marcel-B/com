@@ -48,6 +48,13 @@ features:
   - SkinTokens setzt Knochen und Gewichte ein, bei Menschen mit Mixamo-Namen, sodass Mixamo-Animationen direkt passen.
   - Sechs Proben (Gehen, Schlag, Tritt, Arme heben, Kniebeuge, Umfallen) zeigen im Browser, ob das Skelett sitzt.
   - Die Proben lassen sich als Animationen im GLB mitnehmen, etwa in Godots AnimationPlayer.
+- titel: Für den 3D-Drucker
+  wozu: Ein Modell als Figur ins Regal stellen, statt es nur am Bildschirm zu drehen.
+  verhalten:
+  - Jedes fertige Modell lässt sich als 3MF oder STL in Millimetern herunterladen, mit wählbarer Höhe.
+  - Die Datei ist wasserdicht; offene Stellen und hauchdünne Flächen werden geschlossen, die Oberfläche bleibt glatt.
+  - Auf Wunsch steht die Figur auf einem runden Sockel.
+  - Gedruckt wird nur die Form; was nur in die Textur gemalt ist, etwa Augen oder Muster, fehlt.
 - titel: Alles auf dem eigenen Rechner
   wozu: Bilder und Modelle verlassen das Haus nicht.
   verhalten:
@@ -60,8 +67,14 @@ features:
   - Gemma prüft Bilder und antwortet in der gewählten Sprache.
   - Das Farbschema ist hell, dunkel oder folgt dem System; beide Wahlen merkt sich der Browser.
 roadmap:
+  jetzt:
+  - Figuren vor dem Druck in eine Haltung stellen, mit fertigen Haltungen, von Hand oder per Beschreibung an Gemma
   als_naechstes:
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
+  spaeter:
+  - Farbige Druckdateien für Drucker mit mehreren Filamenten
+  - Warnung vor Stellen, die zum Drucken zu dünn sind
+  - Beim Malen gleich eine Statuen-Haltung wählen, die sich gut drucken lässt
 steckbrief:
 - name: Plattform
   wert: Web; Docker in einem Proxmox-Container, Rechnen auf einem Mac mit Apple Silicon
