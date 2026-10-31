@@ -376,6 +376,18 @@ h2.section::after { content: ""; flex: 1; height: 1px; background: var(--border)
 .page li { margin-bottom: 6px; }
 .prose img { max-width: 100%; border-radius: 10px; }
 .prose blockquote { margin: 16px 0; padding: 4px 16px; border-left: 3px solid var(--accent); color: var(--muted); }
+.prose a[rel~="sponsored"] + .ad { margin-left: 0.3em; padding: 0 5px; border: 1px solid var(--border); border-radius: 4px; color: var(--muted); font-size: 0.7em; vertical-align: 0.15em; }
+.partner-note { margin-top: 32px; color: var(--muted); font-size: 0.9em; }
+
+/* Code blocks get a copy button from main.js; the wrapper keeps it in place while the block scrolls sideways. */
+.code { position: relative; }
+.code pre { padding-right: 96px; }
+.copy { position: absolute; top: 8px; right: 8px; display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border: 1px solid var(--border); border-radius: 6px; background: var(--background); color: var(--muted); font: 500 13px/1.4 var(--sans); cursor: pointer; transition: color 0.15s, border-color 0.15s; }
+.copy:hover, .copy:focus-visible { color: var(--text); border-color: var(--accent); }
+.copy svg { width: 14px; height: 14px; }
+.copy[data-state="copied"] { color: var(--done); border-color: var(--done); }
+.copy[data-state="failed"] { color: var(--doing); border-color: var(--doing); }
+
 .prose table { border-collapse: collapse; width: 100%; display: block; overflow-x: auto; }
 .prose th, .prose td { border: 1px solid var(--border); padding: 6px 10px; text-align: left; }
 
