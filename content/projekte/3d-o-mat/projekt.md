@@ -46,7 +46,7 @@ features:
   wozu: Eine Figur bewegen, statt nur eine Statue zu haben.
   verhalten:
   - SkinTokens setzt Knochen und Gewichte ein, bei Menschen mit Mixamo-Namen, sodass Mixamo-Animationen direkt passen.
-  - Sechs Proben (Gehen, Schlag, Tritt, Arme heben, Kniebeuge, Umfallen) zeigen im Browser, ob das Skelett sitzt.
+  - Sieben Proben (Gehen, Schlag, Tritt, Drehtritt, Arme heben, Kniebeuge, Umfallen) zeigen im Browser, ob das Skelett sitzt.
   - Die Proben lassen sich als Animationen im GLB mitnehmen, etwa in Godots AnimationPlayer.
 - titel: Für den 3D-Drucker
   wozu: Ein Modell als Figur ins Regal stellen, statt es nur am Bildschirm zu drehen.
