@@ -31,8 +31,11 @@ features:
   verhalten:
   - An interface in the browser, shipped with the backend.
 roadmap:
+  jetzt:
+  - 'Localisation: apps and web interface in German and English'
+  - Light and dark mode or following the system, chosen in the settings
   als_naechstes:
-  - 'Localisation: apps and web interface in more languages'
+  - 'Public TestFlight link: anyone who likes can try the iOS app early'
 steckbrief:
 - name: Platform
   wert: Android, iOS, web; backend in Docker
