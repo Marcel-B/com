@@ -60,8 +60,15 @@ features:
   - Gemma prüft Bilder und antwortet in der gewählten Sprache.
   - Das Farbschema ist hell, dunkel oder folgt dem System; beide Wahlen merkt sich der Browser.
 roadmap:
+  jetzt:
+  - 'Für den 3D-Druck: Modelle als wasserdichte 3MF- oder STL-Datei mit Sockel und wählbarer Höhe'
+  - Figuren vor dem Druck in eine Haltung stellen, mit fertigen Haltungen, von Hand oder per Beschreibung an Gemma
   als_naechstes:
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
+  spaeter:
+  - Farbige Druckdateien für Drucker mit mehreren Filamenten
+  - Warnung vor Stellen, die zum Drucken zu dünn sind
+  - Beim Malen gleich eine Statuen-Haltung wählen, die sich gut drucken lässt
 steckbrief:
 - name: Plattform
   wert: Web; Docker in einem Proxmox-Container, Rechnen auf einem Mac mit Apple Silicon

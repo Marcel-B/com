@@ -52,8 +52,15 @@ features:
   - Gemma checks pictures and answers in the chosen language.
   - The colour scheme is light, dark or follows the system; the browser remembers both choices.
 roadmap:
+  jetzt:
+  - 'For 3D printing: models as watertight 3MF or STL files with a base and a height you choose'
+  - Put figures into a pose before printing, with ready-made poses, by hand or by describing it to Gemma
   als_naechstes:
   - 'Localisation: server messages and error texts in English too'
+  spaeter:
+  - Colour print files for printers with several filaments
+  - A warning about parts too thin to print
+  - Choosing a statue pose that prints well while painting the picture
 steckbrief:
 - name: Platform
   wert: Web; Docker in a Proxmox container, computing on a Mac with Apple silicon
