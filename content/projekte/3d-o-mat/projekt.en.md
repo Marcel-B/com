@@ -40,6 +40,13 @@ features:
   - SkinTokens adds bones and weights, with Mixamo names for humans, so Mixamo animations fit directly.
   - Six test moves (walk, punch, kick, raise arms, squat, fall over) show in the browser whether the skeleton fits.
   - The test moves can be taken along as animations in the GLB, for example into Godot's AnimationPlayer.
+- titel: For the 3D printer
+  wozu: Put a model on the shelf as a figure instead of only turning it on screen.
+  verhalten:
+  - Every finished model can be downloaded as 3MF or STL in millimetres, at a height you choose.
+  - The file is watertight; open spots and paper-thin surfaces are closed, and the surface stays smooth.
+  - If you like, the figure stands on a round base.
+  - Only the shape is printed; whatever is only painted into the texture, such as eyes or patterns, is missing.
 - titel: Everything on your own machine
   wozu: Pictures and models never leave the house.
   verhalten:
@@ -53,7 +60,6 @@ features:
   - The colour scheme is light, dark or follows the system; the browser remembers both choices.
 roadmap:
   jetzt:
-  - 'For 3D printing: models as watertight 3MF or STL files with a base and a height you choose'
   - Put figures into a pose before printing, with ready-made poses, by hand or by describing it to Gemma
   als_naechstes:
   - 'Localisation: server messages and error texts in English too'
