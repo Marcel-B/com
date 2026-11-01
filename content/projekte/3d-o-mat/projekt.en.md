@@ -38,8 +38,17 @@ features:
   wozu: Move a figure instead of having just a statue.
   verhalten:
   - SkinTokens adds bones and weights, with Mixamo names for humans, so Mixamo animations fit directly.
-  - Six test moves (walk, punch, kick, raise arms, squat, fall over) show in the browser whether the skeleton fits.
+  - Seven test moves (walk, punch, kick, roundhouse kick, raise arms, squat, fall over) show in the browser whether the skeleton fits.
   - The test moves can be taken along as animations in the GLB, for example into Godot's AnimationPlayer.
+- titel: For the 3D printer
+  wozu: Put a model on the shelf as a figure instead of only turning it on screen.
+  verhalten:
+  - Every finished model can be downloaded as 3MF or STL in millimetres, at a height you choose.
+  - The file is watertight; open spots and paper-thin surfaces are closed, and the surface stays smooth.
+  - If you like, the figure stands on a round base.
+  - Before that, a figure with a skeleton can be put into a pose, with ready-made poses, with sliders for every bone
+    and for the fists, or with a sentence to Gemma. Gemma gets the pose only roughly right; you fine-tune it afterwards.
+  - Only the shape is printed; whatever is only painted into the texture, such as eyes or patterns, is missing.
 - titel: Everything on your own machine
   wozu: Pictures and models never leave the house.
   verhalten:
@@ -52,8 +61,12 @@ features:
   - Gemma checks pictures and answers in the chosen language.
   - The colour scheme is light, dark or follows the system; the browser remembers both choices.
 roadmap:
-  als_naechstes:
+  jetzt:
   - 'Localisation: server messages and error texts in English too'
+  spaeter:
+  - Colour print files for printers with several filaments
+  - A warning about parts too thin to print
+  - Choosing a statue pose that prints well while painting the picture
 steckbrief:
 - name: Platform
   wert: Web; Docker in a Proxmox container, computing on a Mac with Apple silicon
