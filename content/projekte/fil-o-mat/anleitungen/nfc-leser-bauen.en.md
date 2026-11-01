@@ -1,17 +1,19 @@
 ---
 titel: Building the NFC reader for the printer
-beschreibung: An ESP32 with an NFC reader recognises which sample tile sits at the printer and reports it to the server. With parts list, wiring, ESPHome and holders to print.
+beschreibung: An ESP32 with an NFC reader recognises which swatch sits at the printer and reports it to the server. With parts list, wiring, ESPHome and holders to print.
 ---
 
 The Snapmaker U1 reads the NFC tags of its spools itself. Other printers cannot, and there you would have to tap
-“In Drucker einlegen” (load into printer) in the app after every spool change. The NFC reader does that for you: a
-holder with one slot per printer slot hangs on the printer. You put the sample tile of the type you are loading into
-it, an ESP32 reads it and tells the server which tile sits in which slot. The server puts a spool of that type into the
+**Load into printer** in the app after every spool change. The NFC reader does that for you: a
+holder with one slot per printer slot hangs on the printer. You put the swatch of the type you are loading into
+it, an ESP32 reads it and tells the server which swatch sits in which slot. The server puts a spool of that type into the
 slot and books the next print's usage onto it.
 
 This guide is the third part after [the server](/en/projekte/fil-o-mat/server-einrichten.html) and
-[the apps](/en/projekte/fil-o-mat/apps-einrichten.html). The sample tiles must already be assigned to a type in the
+[the apps](/en/projekte/fil-o-mat/apps-einrichten.html). The swatches must already be assigned to a type in the
 app.
+
+The reader's display still shows German texts; this guide gives their meaning in brackets.
 
 ## Which variant for which printer
 
@@ -19,7 +21,7 @@ app.
 | --- | --- | --- |
 | one slot, e.g. Prusa MK4S, Mini or Bambu P1S with external spool | ESP32-C3 with display and one PN532, one pocket | `fach-1x-pn532.yaml` |
 | Prusa Core One with MMU3 | ESP32 DevKit and five RC522, one reader per pocket | `fach-5x-rc522.yaml` |
-| many slots, e.g. Anycubic Kobra X with ACE | ESP32-C3 with display and one PN532 in tap mode: tap the tile, choose the slot with a button | `tippen-pn532.yaml` |
+| many slots, e.g. Anycubic Kobra X with ACE | ESP32-C3 with display and one PN532 in tap mode: tap the swatch, choose the slot with a button | `tippen-pn532.yaml` |
 
 So far the variant with one pocket has been tried on a Prusa MK4S. The MMU3 variant with five readers and tap mode are
 fully built and compile without errors, but have not yet run on a printer. So it is best to start with a printer with
@@ -47,7 +49,7 @@ For the holders:
 - filament without metal or carbon fibre, so PLA or PETG for example; fibres with metal or carbon can dampen the radio
   field
 
-You also need a computer with Python 3, a soldering iron and your sample tiles with NTAG tags.
+You also need a computer with Python 3, a soldering iron and your swatches with NTAG tags.
 
 ## 1. Wiring
 
@@ -155,14 +157,14 @@ After uploading, the log keeps running. It shows you whether everything is right
 
 - `Connected` with an IP address: the ESP32 is on your Wi-Fi.
 - In the I²C scan, `Found device at address 0x24` (PN532) and `0x3C` (display).
-- Hold a tile to the reader. A line with `Backend: HTTP 200` and `"state":"known"` follows.
+- Hold a swatch to the reader. A line with `Backend: HTTP 200` and `"state":"known"` follows.
 
 ```text
 Backend: HTTP 200 {"slots":[{"slot":0,"tag":"0423BC53CB2A81","state":"known","label":"eSun PLA #1",…}]}
 ```
 
 The display shows “Eingelegt” (loaded) with the type and the spool number, and in the app the spool is now in the
-printer. With the MMU3 you hold a tile to each reader in turn. It must appear in the right slot in the log; if it shows
+printer. With the MMU3 you hold a swatch to each reader in turn. It must appear in the right slot in the log; if it shows
 up elsewhere, two SDA lines are swapped.
 
 You can look at the log again at any time:
@@ -173,11 +175,11 @@ esphome logs mk4s.yaml
 
 ## 5. Print the holders
 
-The holders have a pocket for the sample tile at the front and a compartment for the reader behind it. Magnets in the
+The holders have a pocket for the swatch at the front and a compartment for the reader behind it. Magnets in the
 base hold them on the printer's frame. They sit below the reader and so outside its antenna, because right behind it
 they would disturb reception. They are printed standing, base on the bed; you need no supports.
 
-An important measure is the distance between tile and reader. The PN532 reads a tile only from about one centimetre
+An important measure is the distance between swatch and reader. The PN532 reads a swatch only from about one centimetre
 away and reliably from a good two centimetres. The holder for the PN532 therefore keeps a distance of 25 mm and is 41 mm
 deep as a result. The ESP32-C3 sits right in the block in between: it slides in from the left, the display looks out at
 the top, the USB-C socket on the left. Below it there is room for the wires, and a slot leads them back to the reader.
@@ -188,7 +190,7 @@ the top, the USB-C socket on the left. Below it there is room for the wires, and
 | PN532 reader holder with plug: a second part with a USB hole closes the opening | one slot, tap mode | 45 × 41 × 57 mm, plug beside it | [3MF](/dateien/fil-o-mat/LeserHalter-PN532-Stopfen.3mf), [STL](/dateien/fil-o-mat/LeserHalter-PN532-Stopfen.stl) |
 | RC522 reader holder, five pockets | MMU3 | 209 × 17 × 73 mm | [3MF](/dateien/fil-o-mat/LeserHalter-RC522-5er.3mf), [STL](/dateien/fil-o-mat/LeserHalter-RC522-5er.stl) |
 | Case for the ESP32 DevKit, box with lid | MMU3 | 72 × 63 × 28 mm | [3MF](/dateien/fil-o-mat/ESP-Gehaeuse-DevKit.3mf), [STL](/dateien/fil-o-mat/ESP-Gehaeuse-DevKit.stl) |
-| Tag holder without reader, one pocket | just keeping tiles, e.g. at the U1 | 43 × 11 × 46 mm | [3MF](/dateien/fil-o-mat/TagHalter-CoreOne.3mf), [STL](/dateien/fil-o-mat/TagHalter-CoreOne.stl) |
+| Tag holder without reader, one pocket | just keeping swatches, e.g. at the U1 | 43 × 11 × 46 mm | [3MF](/dateien/fil-o-mat/TagHalter-CoreOne.3mf), [STL](/dateien/fil-o-mat/TagHalter-CoreOne.stl) |
 | Tag holder without reader, five pockets | MMU3 without reader | 209 × 11 × 46 mm | [3MF](/dateien/fil-o-mat/TagHalter-5er.3mf), [STL](/dateien/fil-o-mat/TagHalter-5er.stl) |
 | Fit test for the magnets: five slots, tighter from left to right | before the first holder | 85 × 4 × 18 mm | [3MF](/dateien/fil-o-mat/Magnet-Passungstest.3mf), [STL](/dateien/fil-o-mat/Magnet-Passungstest.stl) |
 
@@ -201,11 +203,11 @@ first and check with a reader whether the range reaches through the printed hold
 This is how you assemble the PN532 holder:
 
 1. Press the magnets into their slots from below.
-2. Slide the PN532 into the rear compartment from above, components facing back, the smooth side towards the tile.
+2. Slide the PN532 into the rear compartment from above, components facing back, the smooth side towards the swatch.
    The pin header sticks out at the top.
 3. Slide the C3 with its soldered wires into the block from the left until the catches engage or the plug sits, and
    lead the wires through the slot to the pin header.
-4. Put the holder on the frame and insert a tile into the pocket.
+4. Put the holder on the frame and insert a swatch into the pocket.
 
 ## 6. Adapt the holders to your parts
 
@@ -218,7 +220,7 @@ python3 -m venv ~/halter
 ~/halter/bin/python leserhalter.py                          # PN532 with snap catch
 ~/halter/bin/python leserhalter.py lock=stopfen             # PN532 with plug
 ~/halter/bin/python leserhalter.py reader=rc522 count=5     # five RC522 for the MMU3
-~/halter/bin/python leserhalter.py sep=20                   # less distance between tile and reader
+~/halter/bin/python leserhalter.py sep=20                   # less distance between swatch and reader
 ```
 
 | Script | Generates |
@@ -229,18 +231,18 @@ python3 -m venv ~/halter
 | [magnet_passungstest.py](/dateien/fil-o-mat/magnet_passungstest.py) | fit test for the magnets |
 
 The parameters are explained at the top of each script, such as `mag_d` and `mag_h` for other magnets or `slot_w` and
-`slot_h` for larger sample tiles. The result is a 3MF file in the current folder each time.
+`slot_h` for larger swatches. The result is a 3MF file in the current folder each time.
 
 ## 7. How you work with it
 
-- **One pocket per slot:** load the spool, put the tile into the pocket, done. The display shows the type with the
-  spool number. Pulling the tile out changes nothing in the stock. The spool stays loaded until another tile comes or
+- **One pocket per slot:** load the spool, put the swatch into the pocket, done. The display shows the type with the
+  spool number. Pulling the swatch out changes nothing in the stock. The spool stays loaded until another swatch comes or
   you move it in the app.
-- **Tap mode:** hold the tile to the reader, the display shows the type. With the BOOT button you choose the slot, each
+- **Tap mode:** hold the swatch to the reader, the display shows the type. With the BOOT button you choose the slot, each
   press one further (on the Kobra X 1–4 in the printer, 5–8 in the ACE). Four seconds after the last press the spool
   goes into that slot. Without a button press the reader gives up after 15 seconds.
-- **Unknown tile:** the display shows “Unbekannt” (unknown), and with ntfy set up a notification arrives on your phone.
-  Assign the tile to a type in the app and insert it again.
+- **Unknown swatch:** the display shows “Unbekannt” (unknown), and with ntfy set up a notification arrives on your phone.
+  Assign the swatch to a type in the app and insert it again.
 
 ## When something does not work
 
@@ -249,7 +251,7 @@ The parameters are explained at the top of each script, such as `mag_d` and `mag
 | `command not found: esphome` | ESPHome is not on the path | call `~/esphome/bin/esphome` or add the alias |
 | ESP32 does not appear when flashing | not in flash mode, or a charge-only cable | hold BOOT while plugging in, try another cable |
 | no `0x24` in the I²C scan | PN532 switches not set to I²C, or SDA and SCL swapped | switch 1 ON, 2 OFF; swap the wires on GPIO5 and GPIO6 |
-| tile is not recognised | too close to the reader, or a magnet in front of the antenna | increase the distance, keep magnets outside the antenna |
+| swatch is not recognised | too close to the reader, or a magnet in front of the antenna | increase the distance, keep magnets outside the antenna |
 | display “nicht erreichbar” (unreachable) | wrong address, or the Tailscale address entered | home network address in `secrets.yaml`, then flash again |
 | display “Fehler 404” (error 404) | server too old, or wrong `printer_id` | update the server, check the ID under `/api/printers` |
 | display “Fehler 401” (error 401) | API key missing or wrong | `filomat_api_key` in `secrets.yaml` |
