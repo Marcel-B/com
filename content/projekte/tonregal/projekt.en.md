@@ -24,6 +24,10 @@ features:
   - Tonregal writes tags and cover and files the track under `Artist/Year - Album/NN - Title`.
   - The original is deleted only once the new file has been checked.
   - If filing fails, the reason is shown collected above the list, and the file can be filed with its own tags.
+  - Damaged old files (a broken cover in the tag, gaps before the sound, a wrong extension such as an MP3 called
+    `.wav`) are still read and repackaged on filing without touching the sound; the extension then matches the
+    content. If there is no sound in the file at all, the review list says what is in it instead, such as only zero
+    bytes or a web page.
 - titel: Old collection
   wozu: Bring in old MP3 copies in one go without making the mess any bigger.
   verhalten:
@@ -93,6 +97,7 @@ roadmap:
   - Clean up the processed old collection with one button, only what is provably in the library
   - 'Monitoring: inbox, scans, analysis, backup and the log on a shared overview, with an alert when the backup does not
     run; built, not yet in operation'
+  - Read damaged old files and repackage them on filing; built, not yet tried with the real files
   als_naechstes:
   - 'Your own playlists: put together, sort and play by hand, alongside the smart playlists'
   - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
