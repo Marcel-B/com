@@ -31,9 +31,8 @@ features:
   verhalten:
   - An interface in the browser, shipped with the backend.
   - Apps, web interface and notifications are available in German and English.
+  - Apps and web interface appear light, dark or following the system, chosen in the settings.
 roadmap:
-  jetzt:
-  - Light and dark mode or following the system, chosen in the settings
   als_naechstes:
   - 'Public TestFlight link: anyone who likes can try the iOS app early'
 steckbrief:
