@@ -8,8 +8,8 @@ polls the printers, books what each print uses and serves the web interface. It 
 little: one core and 1 GB of memory are enough. This guide is the first of three parts. After it come
 [the apps](/en/projekte/fil-o-mat/apps-einrichten.html) and [the NFC reader at the printer](/en/projekte/fil-o-mat/nfc-leser-bauen.html).
 
-The apps and the web interface are in German so far; this guide gives the German labels in bold with their meaning
-alongside.
+The apps and the web interface are available in German and English, and this guide uses the English labels. You switch
+the language in the settings.
 
 ## What you need
 
@@ -74,7 +74,7 @@ Settings such as `FILOMAT_API_KEY` or the Nextcloud credentials go into the file
 
 Open `http://<address>:8080/` in your browser. You see fil-O-mat's web interface. It can do everything except NFC:
 printers with their state, filament types, spools, containers, statistics, notifications, backup and update. If an API
-key is set, enter it there under **Einstellungen** (settings). A quick test in the terminal goes like this:
+key is set, enter it there under **Settings**. A quick test in the terminal goes like this:
 
 ```sh
 curl http://192.168.1.50:8080/health
@@ -110,7 +110,7 @@ readers, on the other hand, do not join the tailnet. They always need the addres
 ## 4. Updates
 
 Inside the container a schedule checks every 15 minutes whether there are new versions. The apps show this under
-**Backend**, the web interface under **Einstellungen** (settings). Once you confirm, the server fetches the new
+**Backend**, the web interface under **Settings**. Once you confirm, the server fetches the new
 version, rebuilds the image and restarts. If the new image cannot be built, the previous version simply keeps running.
 
 By hand it works in the Proxmox host's shell:
@@ -165,10 +165,10 @@ both `curl` calls also need `-H "X-Api-Key: …"`. How to restore a backup is de
 ## 6. Notifications on your phone with ntfy
 
 The server can let you know through [ntfy](https://ntfy.sh) when a print finishes or is cancelled, when a spool will
-not last for the running print and when an unknown sample tile sits in a reader. With Bambu and Klipper printers that
+not last for the running print and when an unknown swatch sits in a reader. With Bambu and Klipper printers that
 have a camera, a photo comes along. A topic on ntfy.sh with a name that is hard to guess is enough, such as
 `https://ntfy.sh/filomat-7f3k2q`. Subscribe to it in the ntfy app and enter the address in the fil-O-mat app under
-**Drucker → Meldungen** (printers → notifications). There, **Testmeldung schicken** sends a test message. The ntfy app
+**Printers → Notifications**. There, **Send test notification** sends a test message. The ntfy app
 also works without Google services.
 
 Continue with [the apps](/en/projekte/fil-o-mat/apps-einrichten.html).

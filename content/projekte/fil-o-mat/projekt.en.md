@@ -30,9 +30,9 @@ features:
   wozu: Keep an eye on the store at the computer too.
   verhalten:
   - An interface in the browser, shipped with the backend.
+  - Apps, web interface and notifications are available in German and English.
 roadmap:
   jetzt:
-  - 'Localisation: apps and web interface in German and English'
   - Light and dark mode or following the system, chosen in the settings
   als_naechstes:
   - 'Public TestFlight link: anyone who likes can try the iOS app early'

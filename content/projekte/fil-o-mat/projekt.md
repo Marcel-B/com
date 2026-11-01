@@ -38,9 +38,9 @@ features:
   wozu: Das Lager auch am Rechner im Blick haben.
   verhalten:
   - Eine Oberfläche im Browser, ausgeliefert mit dem Backend.
+  - Apps, Web-Oberfläche und Meldungen gibt es auf Deutsch und Englisch.
 roadmap:
   jetzt:
-  - 'Lokalisierung: Apps und Web-Oberfläche auf Deutsch und Englisch'
   - Heller und dunkler Modus oder wie das System, in den Einstellungen wählbar
   als_naechstes:
   - 'Öffentlicher TestFlight-Link: wer mag, kann die iOS-App vorab testen'
