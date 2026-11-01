@@ -32,6 +32,10 @@ features:
   - Das Original wird erst gelöscht, wenn die neue Datei geprüft ist.
   - Scheitert die Übernahme, steht der Grund gesammelt über der Liste, und die Datei lässt sich mit ihren eigenen Tags
     übernehmen.
+  - Beschädigte alte Dateien (ein kaputtes Cover im Tag, Lücken vor dem Ton, eine falsche Endung wie ein MP3 namens
+    `.wav`) liest Tonregal trotzdem und verpackt sie beim Übernehmen neu, ohne den Klang anzufassen; die Endung passt
+    danach zum Inhalt. Steckt gar kein Ton in der Datei, sagt die Prüfliste, was stattdessen drin ist, etwa nur
+    Nullbytes oder eine Webseite.
 - titel: Altbestand
   wozu: Alte MP3-Kopien in einem Rutsch einbringen, ohne das Durcheinander noch größer zu machen.
   verhalten:
@@ -101,6 +105,7 @@ roadmap:
   - Den abgearbeiteten Altbestand mit einem Knopf aufräumen, nur was nachweislich in der Bibliothek liegt
   - 'Überwachung: Inbox, Scans, Analyse, Backup und das Protokoll auf einer gemeinsamen Übersicht, mit Alarm, wenn das
     Backup ausbleibt; gebaut, noch nicht im Betrieb'
+  - Beschädigte alte Dateien lesen und beim Übernehmen neu verpacken; gebaut, mit den echten Dateien noch nicht erprobt
   als_naechstes:
   - 'Eigene Playlists: von Hand zusammenstellen, sortieren und abspielen, neben den Smart Playlists'
   - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
