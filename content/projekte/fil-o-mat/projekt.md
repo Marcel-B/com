@@ -39,9 +39,8 @@ features:
   verhalten:
   - Eine Oberfläche im Browser, ausgeliefert mit dem Backend.
   - Apps, Web-Oberfläche und Meldungen gibt es auf Deutsch und Englisch.
+  - Apps und Web-Oberfläche erscheinen hell, dunkel oder wie das System, in den Einstellungen wählbar.
 roadmap:
-  jetzt:
-  - Heller und dunkler Modus oder wie das System, in den Einstellungen wählbar
   als_naechstes:
   - 'Öffentlicher TestFlight-Link: wer mag, kann die iOS-App vorab testen'
 steckbrief:
