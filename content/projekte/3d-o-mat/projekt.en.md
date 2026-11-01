@@ -46,6 +46,8 @@ features:
   - Every finished model can be downloaded as 3MF or STL in millimetres, at a height you choose.
   - The file is watertight; open spots and paper-thin surfaces are closed, and the surface stays smooth.
   - If you like, the figure stands on a round base.
+  - Before that, a figure with a skeleton can be put into a pose, with ready-made poses, with sliders for every bone
+    and for the fists, or with a sentence to Gemma. Gemma gets the pose only roughly right; you fine-tune it afterwards.
   - Only the shape is printed; whatever is only painted into the texture, such as eyes or patterns, is missing.
 - titel: Everything on your own machine
   wozu: Pictures and models never leave the house.
@@ -60,8 +62,6 @@ features:
   - The colour scheme is light, dark or follows the system; the browser remembers both choices.
 roadmap:
   jetzt:
-  - Put figures into a pose before printing, with ready-made poses, by hand or by describing it to Gemma
-  als_naechstes:
   - 'Localisation: server messages and error texts in English too'
   spaeter:
   - Colour print files for printers with several filaments
