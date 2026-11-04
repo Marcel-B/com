@@ -8,6 +8,8 @@ kurz: Self-hosted notification service with push to the iPhone, a web interface,
 links:
 - text: Source on GitHub
   url: https://github.com/Marcel-B/onkel-bummel
+- text: Privacy of the app
+  url: /en/datenschutz-onkel-bummel.html
 features:
 - titel: Sending from scripts and services
   wozu: Every service of your own can report with one simple request.

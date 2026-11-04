@@ -15,6 +15,8 @@ technik:
 links:
 - text: Quelltext auf GitHub
   url: https://github.com/Marcel-B/onkel-bummel
+- text: Datenschutz der App
+  url: /datenschutz-onkel-bummel.html
 features:
 - titel: Senden aus Skripten und Diensten
   wozu: Jeder eigene Dienst kann mit einer einfachen Anfrage Bescheid geben.
