@@ -2,6 +2,7 @@
 titel: NFC-Leser für den Drucker bauen
 beschreibung: Ein ESP32 mit NFC-Leser erkennt, welches Musterplättchen am Drucker steckt, und meldet es dem Server. Mit Teileliste, Verdrahtung, ESPHome und Haltern zum Drucken.
 datum: 2026-10-30
+aktualisiert: 2026-11-04
 reihenfolge: 3
 ---
 
@@ -243,8 +244,8 @@ und `slot_h` für größere Musterplättchen. Das Ergebnis ist jeweils eine 3MF-
 - **Tipp-Modus:** Plättchen an den Leser halten, das Display zeigt die Sorte. Mit der BOOT-Taste wählst du den Slot,
   jeder Druck einen weiter (bei der Kobra X 1–4 im Gerät, 5–8 in der ACE). Vier Sekunden nach dem letzten Druck kommt
   die Spule in diesen Slot. Ohne Tastendruck bricht der Leser nach 15 Sekunden ab.
-- **Unbekanntes Plättchen:** Das Display zeigt „Unbekannt“, und mit eingerichtetem ntfy kommt eine Meldung aufs
-  Handy. Ordne das Plättchen in der App einer Sorte zu und steck es neu ein.
+- **Unbekanntes Plättchen:** Das Display zeigt „Unbekannt“, und mit eingerichtetem [Onkel Bummel](/projekte/onkel-bummel/) kommt eine
+  Meldung aufs Handy. Ordne das Plättchen in der App einer Sorte zu und steck es neu ein.
 
 ## Wenn etwas nicht geht
 

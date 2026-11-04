@@ -21,6 +21,8 @@
 - name: ffmpeg
   url: https://ffmpeg.org/
   auch: [FFmpeg]
+- name: Grafana
+  url: https://grafana.com/
 - name: Homebrew
   url: https://brew.sh/
 - name: LM Studio
@@ -41,6 +43,8 @@
   url: https://developer.apple.com/testflight/
 - name: Xcode
   url: https://developer.apple.com/xcode/
+- name: XcodeGen
+  url: https://github.com/yonaskolb/XcodeGen
 
 # Hardware: Hier kommen später die Bauteile aus den Anleitungen hinzu (ESP32-C3, PN532, RC522, …), sobald es für sie
 # eine gute Bezugsquelle gibt, gegebenenfalls als Partnerlink.

@@ -162,13 +162,24 @@ both `curl` calls also need `-H "X-Api-Key: …"`. How to restore a backup is de
 [backend's README](https://github.com/Marcel-B/fil-o-mat/blob/main/backend/README.md#sicherung-in-die-nextcloud)
 (in German).
 
-## 6. Notifications on your phone with ntfy
+## 6. Notifications on your phone with Onkel Bummel
 
-The server can let you know through [ntfy](https://ntfy.sh) when a print finishes or is cancelled, when a spool will
-not last for the running print and when an unknown swatch sits in a reader. With Bambu and Klipper printers that
-have a camera, a photo comes along. A topic on ntfy.sh with a name that is hard to guess is enough, such as
-`https://ntfy.sh/filomat-7f3k2q`. Subscribe to it in the ntfy app and enter the address in the fil-O-mat app under
-**Printers → Notifications**. There, **Send test notification** sends a test message. The ntfy app
-also works without Google services.
+The server can let you know through [Onkel Bummel](/en/projekte/onkel-bummel/) when a print finishes or is
+cancelled, when a spool will not last for the running print, when a printer reports an error and when an unknown
+swatch sits in a reader. Finished prints and errors come with a picture: a photo from Bambu and Klipper printers that
+have a camera, otherwise the preview image from the slicer. If the server cannot tell which of several identical
+spools was loaded, it asks “Which spool?” in a notification with one button per spool.
+
+For this you need your own Onkel Bummel server, as described in
+[Setting up Onkel Bummel](/en/projekte/onkel-bummel/einrichten.html). In its web interface, create a token under
+**Verwaltung → Publish-Tokens** (administration → publish tokens; Onkel Bummel's interface is in German so far) that only applies to the topic `filomat`. It is shown only once. In the
+fil-O-mat app, enter the address of your Onkel Bummel server, the topic `filomat` and the token under
+**Printers → Notifications** (in the web interface under **Settings**). **Send test notification** checks the route
+and otherwise shows what is wrong, such as an unknown token or a topic the token may not use. Subscribe to the topic
+in the Onkel Bummel app and the notifications arrive on your iPhone; in the browser you see them in Onkel Bummel's
+web interface.
+
+If you had set up ntfy before: the old address no longer applies, and until you enter the new destination the server
+sends no notifications.
 
 Continue with [the apps](/en/projekte/fil-o-mat/apps-einrichten.html).
