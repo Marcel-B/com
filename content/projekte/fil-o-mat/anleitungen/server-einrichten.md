@@ -2,6 +2,7 @@
 titel: Den fil-O-mat-Server einrichten
 beschreibung: Das Backend mit Web-Oberfläche in einem Proxmox-Container oder auf einem beliebigen Docker-Rechner aufsetzen, mit Tailscale für unterwegs, Updates per App und nächtlicher Sicherung in die Nextcloud.
 datum: 2026-10-30
+aktualisiert: 2026-11-04
 reihenfolge: 1
 ---
 
@@ -161,12 +162,24 @@ Die zweite Abfrage zeigt, wie die letzte Sicherung lief. Dasselbe siehst du in d
 API-Schlüssel brauchen beide `curl` noch `-H "X-Api-Key: …"`. Wie du eine Sicherung zurückspielst, steht im
 [README des Backends](https://github.com/Marcel-B/fil-o-mat/blob/main/backend/README.md#sicherung-in-die-nextcloud).
 
-## 6. Meldungen aufs Handy mit ntfy
+## 6. Meldungen aufs Handy mit Onkel Bummel
 
-Der Server kann dir über [ntfy](https://ntfy.sh) Bescheid geben, wenn ein Druck fertig ist oder abbricht, wenn eine
-Spule für den laufenden Druck nicht reicht und wenn ein unbekanntes Plättchen in einem Leser steckt. Bei Bambu- und
-Klipper-Druckern mit Kamera kommt ein Foto mit. Ein Thema auf ntfy.sh mit einem schwer zu erratenden Namen reicht,
-etwa `https://ntfy.sh/filomat-7f3k2q`. Abonniere es in der ntfy-App und trag die Adresse in der fil-O-mat-App unter
-**Drucker → Meldungen** ein. Dort schickt **Testmeldung schicken** eine Probe. Die ntfy-App kommt auch ohne Google-Dienste aus.
+Der Server kann dir über [Onkel Bummel](/projekte/onkel-bummel/) Bescheid geben, wenn ein Druck fertig ist oder
+abbricht, wenn eine Spule für den laufenden Druck nicht reicht, wenn ein Drucker einen Fehler meldet und wenn ein
+unbekanntes Plättchen in einem Leser steckt. Zu fertigen Drucken und Fehlern kommt ein Bild mit: bei Bambu- und
+Klipper-Druckern mit Kamera ein Foto, sonst das Vorschaubild aus dem Slicer. Weiß der Server nicht, welche von
+mehreren gleichen Spulen eingelegt wurde, fragt er per Meldung „Welche Spule?“ und bietet einen Knopf pro Spule an.
+
+Dafür brauchst du einen eigenen Onkel-Bummel-Server, wie in
+[Onkel Bummel einrichten](/projekte/onkel-bummel/einrichten.html) beschrieben. Leg dort in der Web-Oberfläche unter
+**Verwaltung → Publish-Tokens** einen Token an, der nur für das Topic `filomat` gilt. Er wird nur einmal angezeigt.
+Trag in der fil-O-mat-App unter **Drucker → Meldungen** (in der Web-Oberfläche unter **Einstellungen**) die Adresse
+deines Onkel-Bummel-Servers, das Topic `filomat` und den Token ein. **Testmeldung schicken** prüft den Weg und zeigt
+sonst, was nicht stimmt, etwa einen unbekannten Token oder ein Topic, das der Token nicht darf. Abonniere das Topic
+in der Onkel-Bummel-App, dann kommen die Meldungen aufs iPhone; im Browser siehst du sie in der Web-Oberfläche von
+Onkel Bummel.
+
+Hattest du vorher ntfy eingerichtet: Die alte Adresse gilt nicht mehr, und bis du das neue Ziel einträgst, verschickt
+der Server keine Meldungen.
 
 Weiter geht es mit [den Apps](/projekte/fil-o-mat/apps-einrichten.html).

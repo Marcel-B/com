@@ -241,7 +241,7 @@ The parameters are explained at the top of each script, such as `mag_d` and `mag
 - **Tap mode:** hold the swatch to the reader, the display shows the type. With the BOOT button you choose the slot, each
   press one further (on the Kobra X 1–4 in the printer, 5–8 in the ACE). Four seconds after the last press the spool
   goes into that slot. Without a button press the reader gives up after 15 seconds.
-- **Unknown swatch:** the display shows “Unbekannt” (unknown), and with ntfy set up a notification arrives on your phone.
+- **Unknown swatch:** the display shows “Unbekannt” (unknown), and with [Onkel Bummel](/en/projekte/onkel-bummel/) set up a notification arrives on your phone.
   Assign the swatch to a type in the app and insert it again.
 
 ## When something does not work
