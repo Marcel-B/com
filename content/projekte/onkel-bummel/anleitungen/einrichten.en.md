@@ -18,6 +18,9 @@ the [README](https://github.com/Marcel-B/onkel-bummel#readme) and the
 - for the iPhone app: a Mac with Xcode and an Apple Developer Program account
 - optional: a Nextcloud for the nightly backup
 
+It also works without Proxmox and an identity server: [Onkel Bummel on your own computer](/en/projekte/onkel-bummel/auf-dem-rechner.html)
+starts the server with Docker and an access key.
+
 ## 1. Prepare the tailnet
 
 In the Tailscale admin console, turn on MagicDNS and HTTPS certificates under **DNS**. This gives Onkel Bummel an
