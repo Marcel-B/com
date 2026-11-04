@@ -53,10 +53,13 @@ features:
   verhalten:
   - The server runs in a container on a Proxmox host and can only be reached through Tailscale.
   - Signing in goes through your own identity server, for the web interface and the app.
+  - Without an identity server, you start the server with Docker on your own computer and sign in in the browser with
+    an access key the server creates on its first start.
   - The server installs new versions by itself; if one does not come up, the previous one runs again.
   - If you like, it backs up the database and pictures to a Nextcloud every night, encrypted.
 roadmap:
   als_naechstes:
+  - The iPhone app for servers without an identity server too, with the access key
   - Shortcuts and an “Unread” widget for the iPhone
   - 'Search: “ss” also finds “ß”'
   - Show alarms from Grafana more clearly

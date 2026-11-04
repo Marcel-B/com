@@ -61,10 +61,13 @@ features:
   verhalten:
   - Der Server läuft in einem Container auf einem Proxmox-Host und ist nur über Tailscale erreichbar.
   - Angemeldet wird über einen eigenen Identity-Server, für die Web-Oberfläche und die App.
+  - Wer keinen Identity-Server hat, startet den Server mit Docker auf dem eigenen Rechner und meldet sich im Browser
+    mit einem Zugangsschlüssel an, den der Server beim ersten Start anlegt.
   - Neue Versionen spielt der Server selbst ein; kommt eine nicht hoch, läuft wieder die vorige.
   - Auf Wunsch sichert er Datenbank und Bilder jede Nacht verschlüsselt in eine Nextcloud.
 roadmap:
   als_naechstes:
+  - Die iPhone-App auch für Server ohne Identity-Server, mit dem Zugangsschlüssel
   - 'Kurzbefehle und ein Widget „Ungelesen“ für das iPhone'
   - 'Suche: „ss“ findet auch „ß“'
   - Alarme aus Grafana übersichtlicher darstellen

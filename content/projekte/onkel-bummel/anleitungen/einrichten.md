@@ -20,6 +20,9 @@ Diese Anleitung führt vom leeren Proxmox-Host bis zur ersten Nachricht auf dem 
 - für die iPhone-App: einen Mac mit Xcode und ein Konto im Apple Developer Program
 - optional: eine Nextcloud für die nächtliche Sicherung
 
+Ohne Proxmox und Identity-Server geht es auch: [Onkel Bummel auf dem eigenen Rechner](/projekte/onkel-bummel/auf-dem-rechner.html)
+startet den Server mit Docker und einem Zugangsschlüssel.
+
 ## 1. Tailnet vorbereiten
 
 Schalte in der Admin-Konsole von Tailscale unter **DNS** MagicDNS und HTTPS-Zertifikate ein. Damit bekommt Onkel
