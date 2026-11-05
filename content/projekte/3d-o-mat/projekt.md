@@ -70,6 +70,7 @@ features:
   - Das Farbschema ist hell, dunkel oder folgt dem System; beide Wahlen merkt sich der Browser.
 roadmap:
   jetzt:
+  - Nachricht über Onkel Bummel, wenn ein Modell oder Bild fertig ist, mit dem echten Dienst ausprobieren
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
   spaeter:
   - Farbige Druckdateien für Drucker mit mehreren Filamenten

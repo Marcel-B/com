@@ -62,6 +62,7 @@ features:
   - The colour scheme is light, dark or follows the system; the browser remembers both choices.
 roadmap:
   jetzt:
+  - Try the Onkel Bummel message for finished models and pictures with the real service
   - 'Localisation: server messages and error texts in English too'
   spaeter:
   - Colour print files for printers with several filaments
