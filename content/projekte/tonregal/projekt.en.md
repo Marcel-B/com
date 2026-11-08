@@ -98,12 +98,14 @@ roadmap:
   - 'Monitoring: inbox, scans, analysis, backup and the log on a shared overview, with an alert when the backup does not
     run; built, not yet in operation'
   - Read damaged old files and repackage them on filing; built, not yet tried with the real files
+  - 'Ratings without Navidrome: Tonregal keeps the stars itself; they apply at once, also to freshly filed tracks, and go
+    into the backup. The existing stars from Navidrome are carried over, and Navidrome gets a copy of every new rating
+    for its smart playlists; built, not yet in operation'
   als_naechstes:
   - 'Your own playlists: put together, sort and play by hand, alongside the smart playlists'
   - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
     the change goes into the file'
-  - 'Ratings without Navidrome: Tonregal keeps the stars itself and writes them into the file, existing ones are
-    carried over'
+  - Also write the stars into the file, so they sit in the tags like everything else
   - Playlists, offline playback and CarPlay in the iPhone app
   - 'Localisation: web player and app in more languages'
 steckbrief:
@@ -122,5 +124,5 @@ rebuilt from the library at any time.
 
 ASP.NET Core (.NET 10) with EF Core and SQLite, SignalR for live updates, a Vue 3 frontend with Pinia, Tailwind CSS and
 PrimeVue, a SwiftUI app. Fingerprinting, analysis and backup use standalone tools such as Chromaprint, librosa, ffmpeg,
-rsgain and rclone. In the background Navidrome counts plays and keeps the stars. The Mac mini installs new versions by
+rsgain and rclone. In the background Navidrome counts plays; the stars will be kept by Tonregal itself and passed on to Navidrome. The Mac mini installs new versions by
 itself as soon as nothing is being imported, analysed or backed up; the iPhone app goes to TestFlight automatically.
