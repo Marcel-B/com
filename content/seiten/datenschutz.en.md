@@ -25,8 +25,10 @@ EU-US Data Privacy Framework. Details are in [GitHub's privacy statement](https:
 
 ## Links to other sites
 
-The projects' source code is on github.com, and some projects have sites of their own. Following a link there takes you
-off this site; the privacy policy of that provider then applies.
+The projects' source code is on github.com, some projects have sites of their own, and the guides link the tools and
+products they mention. These are plain links without any identifier: as long as you do not follow one, the provider learns
+nothing about you. If you follow one, you leave this site, and the provider sees your IP address, as with any page you
+open, and, depending on your browser, which page you came from; its privacy policy then applies.
 
 ## Your rights
 

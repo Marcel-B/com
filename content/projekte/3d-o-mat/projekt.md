@@ -46,8 +46,17 @@ features:
   wozu: Eine Figur bewegen, statt nur eine Statue zu haben.
   verhalten:
   - SkinTokens setzt Knochen und Gewichte ein, bei Menschen mit Mixamo-Namen, sodass Mixamo-Animationen direkt passen.
-  - Sechs Proben (Gehen, Schlag, Tritt, Arme heben, Kniebeuge, Umfallen) zeigen im Browser, ob das Skelett sitzt.
+  - Sieben Proben (Gehen, Schlag, Tritt, Drehtritt, Arme heben, Kniebeuge, Umfallen) zeigen im Browser, ob das Skelett sitzt.
   - Die Proben lassen sich als Animationen im GLB mitnehmen, etwa in Godots AnimationPlayer.
+- titel: Für den 3D-Drucker
+  wozu: Ein Modell als Figur ins Regal stellen, statt es nur am Bildschirm zu drehen.
+  verhalten:
+  - Jedes fertige Modell lässt sich als 3MF oder STL in Millimetern herunterladen, mit wählbarer Höhe.
+  - Die Datei ist wasserdicht; offene Stellen und hauchdünne Flächen werden geschlossen, die Oberfläche bleibt glatt.
+  - Auf Wunsch steht die Figur auf einem runden Sockel.
+  - Vorher lässt sich eine Figur mit Skelett in eine Haltung stellen, mit fertigen Haltungen, mit Schiebern für jeden
+    Knochen und für die Fäuste oder mit einem Satz an Gemma. Gemma trifft die Haltung nur grob, danach stellt man nach.
+  - Gedruckt wird nur die Form; was nur in die Textur gemalt ist, etwa Augen oder Muster, fehlt.
 - titel: Alles auf dem eigenen Rechner
   wozu: Bilder und Modelle verlassen das Haus nicht.
   verhalten:
@@ -60,8 +69,19 @@ features:
   - Gemma prüft Bilder und antwortet in der gewählten Sprache.
   - Das Farbschema ist hell, dunkel oder folgt dem System; beide Wahlen merkt sich der Browser.
 roadmap:
-  als_naechstes:
+  jetzt:
+  - 'Bewegungsbibliothek: über 240 echte Bewegungsaufnahmen auf die eigene Figur übertragen, einstellen und als
+    Animationen herunterladen, mit Füßen, die nicht rutschen, Schleifen ohne Sprung und Root Motion; mit der echten
+    Figur und in Godot ausprobieren'
+  - Gelenke des Skeletts von Hand verschieben, wenn SkinTokens sie nicht genau trifft; mit echten Figuren ausprobieren
+  - Nachricht über Onkel Bummel, wenn ein Modell oder Bild fertig ist, mit dem echten Dienst ausprobieren
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
+  spaeter:
+  - Eigene Modelle hochladen und mit Skelett versehen
+  - Eine Bewegung beschreiben, und ein Modell erzeugt sie
+  - Farbige Druckdateien für Drucker mit mehreren Filamenten
+  - Warnung vor Stellen, die zum Drucken zu dünn sind
+  - Beim Malen gleich eine Statuen-Haltung wählen, die sich gut drucken lässt
 steckbrief:
 - name: Plattform
   wert: Web; Docker in einem Proxmox-Container oder direkt auf einem Mac, Rechnen auf einem Mac mit Apple Silicon

@@ -14,7 +14,8 @@ features:
   - A vision model recognises the component or breakout board in the photo.
   - If no type designation is legible, a second pass reads the markings and searches the web for the matching board.
   - The sources are shown.
-  - Photos come as JPEG, PNG or WebP, straight from the phone camera or as a file.
+  - Photos come as JPEG, PNG, WebP or HEIC, straight from the phone camera or as a file.
+  - The server converts HEIC photos from the iPhone to JPEG, the right way up and without metadata such as the location.
 - titel: Containers
   wozu: Know which box a part is in.
   verhalten:
@@ -33,8 +34,6 @@ features:
   - A timer installs new versions every five minutes, but only when all automated tests are green.
   - If a new version does not start, the container goes back to the previous one by itself.
 roadmap:
-  jetzt:
-  - Accept HEIC photos from the iPhone and convert them
   als_naechstes:
   - 'Localisation: the interface in more languages'
 steckbrief:

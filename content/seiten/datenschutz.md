@@ -17,7 +17,7 @@ Die Seite liegt bei GitHub Pages, einem Dienst der GitHub Inc., 88 Colin P. Kell
 
 ## Links zu anderen Seiten
 
-Der Quelltext der Projekte liegt auf github.com, manche Projekte haben eigene Seiten. Wer einem Link dorthin folgt, verlässt diese Seite; dann gilt die Datenschutzerklärung des jeweiligen Anbieters.
+Der Quelltext der Projekte liegt auf github.com, manche Projekte haben eigene Seiten, und Anleitungen verlinken die Werkzeuge und Produkte, die sie nennen. Das sind gewöhnliche Links ohne Kennung: Solange du keinem folgst, erfährt der Anbieter nichts von dir. Folgst du einem, verlässt du diese Seite, der Anbieter sieht wie bei jedem Seitenaufruf deine IP-Adresse und, je nach Browser, von welcher Seite du kommst; dann gilt seine Datenschutzerklärung.
 
 ## Deine Rechte
 

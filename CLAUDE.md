@@ -14,6 +14,9 @@ GitHub Pages from main. `static/` is copied as it is; `static/CNAME` holds the d
   per page, sitemap entries, unique titles, valid JSON-LD, sitemap and feed XML.
 - Template texts live in `build.py`'s `T` in both languages; content brings its own. Localisation stays on every
   project's roadmap until its interface is translated (Marcel's rule from 2026-10-30).
+- Proper names in prose are linked by `build.py` from `content/links.yml` (first appearance per page; `partner: true` marks
+  an affiliate link as an ad and needs the privacy page's `#partnerlinks` section). Code blocks get a copy button from
+  `static/main.js`.
 - The colour scheme (system, light, dark) is set by the inline script in every page's head from `localStorage.theme`
   and switched in `static/main.js`; dark tokens exist twice in `style.css` (media query and `[data-theme="dark"]`).
 - All markup lives in `build.py`'s templates and `static/style.css`; links are absolute (`/…`). German, du-form, system

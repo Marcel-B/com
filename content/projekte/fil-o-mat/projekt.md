@@ -38,9 +38,11 @@ features:
   wozu: Das Lager auch am Rechner im Blick haben.
   verhalten:
   - Eine Oberfläche im Browser, ausgeliefert mit dem Backend.
+  - Apps, Web-Oberfläche und Meldungen gibt es auf Deutsch und Englisch.
+  - Apps und Web-Oberfläche erscheinen hell, dunkel oder wie das System, in den Einstellungen wählbar.
 roadmap:
   als_naechstes:
-  - 'Lokalisierung: Apps und Web-Oberfläche in weiteren Sprachen'
+  - 'Öffentlicher TestFlight-Link: wer mag, kann die iOS-App vorab testen'
 steckbrief:
 - name: Plattform
   wert: Android, iOS, Web; Backend in Docker
