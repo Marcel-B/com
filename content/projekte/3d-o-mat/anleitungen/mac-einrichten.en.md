@@ -38,9 +38,12 @@ git clone https://github.com/Marcel-B/3d-o-mat.git ~/repos/3d-o-mat && cd ~/repo
 python3.12 -m venv .venv
 .venv/bin/pip install -r requirements.txt -r requirements-rembg.txt
 (cd frontend && npm ci && npm run build)
+.venv/bin/python -m omat3d.motions fetch motions-data
 ```
 
-The virtual environment `.venv` keeps all Python packages inside the project folder. `requirements-rembg.txt` brings
+The last line fetches the motion library, free recordings from CMU and Bandai Namco (about 50 MB) that the site
+transfers onto a figure's skeleton; it lands in `motions-data/` in the project folder. The virtual environment `.venv`
+keeps all Python packages inside the project folder. `requirements-rembg.txt` brings
 rembg for cutting out photos; without it the app only removes plain single-colour backgrounds. `npm run build` puts the
 interface into `frontend/dist`, where the app serves it from. When a later `git pull` changes something in
 `frontend/`, build it again.
