@@ -63,11 +63,11 @@ features:
 roadmap:
   jetzt:
   - 'Motion library: carry more than 240 real motion recordings over to your own figure, adjust them and download them
-    as animations; try it with a real figure and in Godot'
+    as animations, with feet that do not slide, loops without a jump and root motion; try it with a real figure and in
+    Godot'
   - Try the Onkel Bummel message for finished models and pictures with the real service
   - 'Localisation: server messages and error texts in English too'
   spaeter:
-  - Cleaner motions from the library, with feet that do not slide and loops without a jump
   - Moving the skeleton's joints by hand where SkinTokens misses them
   - Uploading your own models and giving them a skeleton
   - Describe a motion, and a model creates it

@@ -71,11 +71,11 @@ features:
 roadmap:
   jetzt:
   - 'Bewegungsbibliothek: über 240 echte Bewegungsaufnahmen auf die eigene Figur übertragen, einstellen und als
-    Animationen herunterladen, mit der echten Figur und in Godot ausprobieren'
+    Animationen herunterladen, mit Füßen, die nicht rutschen, Schleifen ohne Sprung und Root Motion; mit der echten
+    Figur und in Godot ausprobieren'
   - Nachricht über Onkel Bummel, wenn ein Modell oder Bild fertig ist, mit dem echten Dienst ausprobieren
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
   spaeter:
-  - Saubere Bewegungen aus der Bibliothek, mit Füßen, die nicht rutschen, und Schleifen ohne Sprung
   - Gelenke des Skeletts selbst verschieben, wenn SkinTokens sie nicht genau trifft
   - Eigene Modelle hochladen und mit Skelett versehen
   - Eine Bewegung beschreiben, und ein Modell erzeugt sie
