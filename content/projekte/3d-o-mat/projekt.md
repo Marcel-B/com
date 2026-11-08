@@ -84,7 +84,7 @@ roadmap:
   - Beim Malen gleich eine Statuen-Haltung wählen, die sich gut drucken lässt
 steckbrief:
 - name: Plattform
-  wert: Web; Docker in einem Proxmox-Container, Rechnen auf einem Mac mit Apple Silicon
+  wert: Web; Docker in einem Proxmox-Container oder direkt auf einem Mac, Rechnen auf einem Mac mit Apple Silicon
 - name: Lizenz
   wert: MIT
 ---

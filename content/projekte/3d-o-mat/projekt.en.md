@@ -76,7 +76,7 @@ roadmap:
   - Choosing a statue pose that prints well while painting the picture
 steckbrief:
 - name: Platform
-  wert: Web; Docker in a Proxmox container, computing on a Mac with Apple silicon
+  wert: Web; Docker in a Proxmox container or directly on a Mac, computing on a Mac with Apple silicon
 - name: Licence
   wert: MIT
 ---
