@@ -59,6 +59,13 @@ features:
   - Queue, stars, shuffle by album, artist or the whole library, and repeat.
   - Control from the lock screen and headphone buttons.
   - Can be added to the home screen in iPhone Safari.
+- titel: Search
+  wozu: Find a track without knowing which album it is on.
+  verhalten:
+  - One search field finds tracks, albums and artists at once, in the browser and in the iPhone app.
+  - Several words may be spread over title, artist and album; “beatles help” finds *Help!*.
+  - Upper and lower case, accents and punctuation do not matter, “beyonce” finds *Beyoncé* and “acdc” *AC/DC*.
+  - A result plays straight away, followed by the other results; single ones can be queued to play next.
 - titel: Full-screen player
   wozu: A screen just for what is playing.
   verhalten:
@@ -101,6 +108,7 @@ roadmap:
   - 'Ratings without Navidrome: Tonregal keeps the stars itself; they apply at once, also to freshly filed tracks, and go
     into the backup. The existing stars from Navidrome are carried over, and Navidrome gets a copy of every new rating
     for its smart playlists; built, not yet in operation'
+  - Search across tracks, albums and artists in the browser and the iPhone app; built, not yet in operation
   als_naechstes:
   - 'Your own playlists: put together, sort and play by hand, alongside the smart playlists'
   - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
