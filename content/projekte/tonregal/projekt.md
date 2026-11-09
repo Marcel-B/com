@@ -80,6 +80,7 @@ features:
   - Das Cover groß auf einem unscharfen Hintergrund in seinen Farben, dazu Sterne und Fortschritt mit Restzeit.
   - Songtext neben oder statt des Covers, eine Warteschlange zum Umsortieren per Ziehen.
   - Nach dem Neuladen geht es an derselben Stelle im Stück weiter.
+  - Zum Spaß tanzt vor dem Cover eine kleine 3D-Figur, solange Musik läuft, und bleibt bei Pause stehen; abschaltbar.
 - titel: Songtexte
   wozu: Mitlesen, wo man im Stück ist.
   verhalten:
@@ -131,6 +132,7 @@ roadmap:
   - Suche über Titel, Alben und Interpreten im Browser und in der iPhone-App; gebaut, noch nicht im Betrieb
   - 'Eigene Playlists im Browser und in der iPhone-App: von Hand zusammenstellen, sortieren und abspielen; gebaut, noch
     nicht im Betrieb'
+  - Eine tanzende 3D-Figur im großen Player im Browser; gebaut, noch nicht im Betrieb
   als_naechstes:
   - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
     Album; die Änderung landet in der Datei'

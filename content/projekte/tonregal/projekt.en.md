@@ -72,6 +72,8 @@ features:
   - The cover large on a blurred background in its colours, with stars and progress with time left.
   - Lyrics beside or instead of the cover, a queue to rearrange by dragging.
   - After a reload it continues at the same point in the track.
+  - Just for fun, a small 3D figure dances in front of the cover while music plays and stands still when paused; it can
+    be switched off.
 - titel: Lyrics
   wozu: Read along where you are in the track.
   verhalten:
@@ -121,6 +123,7 @@ roadmap:
   - Search across tracks, albums and artists in the browser and the iPhone app; built, not yet in operation
   - 'Your own playlists in the browser and the iPhone app: put together, sort and play by hand; built, not yet in
     operation'
+  - A dancing 3D figure in the full-screen player in the browser; built, not yet in operation
   als_naechstes:
   - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
     the change goes into the file'
