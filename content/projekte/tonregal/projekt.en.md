@@ -82,6 +82,16 @@ features:
   verhalten:
   - Rules such as BPM range, key (including matching keys for mixing), genre, new, never played or stars.
   - Tonregal plays them itself.
+- titel: Your own playlists
+  wozu: Put together lists for an occasion yourself, in exactly the order you want.
+  verhalten:
+  - A bookmark on the album, on every track, in the full-screen player and in the queue puts tracks into a playlist,
+    or straight into a new one. Whatever is already in it does not go in twice.
+  - Tracks can be reordered by dragging or with the arrow keys and removed again; play, shuffle or add to the queue.
+  - The whole queue can be saved as a playlist.
+  - Every playlist is also kept as an `.m3u8` file in the library, so it is backed up and readable by other players.
+  - If a track gets a new album while its tags are tidied up, it stays in the playlist.
+  - Also in the app for iPhone and iPad, with reordering and "Add to playlist …" on albums, tracks and in the player.
 - titel: Download
   wozu: Take the music where Tonregal is not.
   verhalten:
@@ -109,12 +119,13 @@ roadmap:
     into the backup. The existing stars from Navidrome are carried over, and Navidrome gets a copy of every new rating
     for its smart playlists; built, not yet in operation'
   - Search across tracks, albums and artists in the browser and the iPhone app; built, not yet in operation
+  - 'Your own playlists in the browser and the iPhone app: put together, sort and play by hand; built, not yet in
+    operation'
   als_naechstes:
-  - 'Your own playlists: put together, sort and play by hand, alongside the smart playlists'
   - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
     the change goes into the file'
   - Also write the stars into the file, so they sit in the tags like everything else
-  - Playlists, offline playback and CarPlay in the iPhone app
+  - Offline playback and CarPlay in the iPhone app
   - 'Localisation: web player and app in more languages'
 steckbrief:
 - name: Platform

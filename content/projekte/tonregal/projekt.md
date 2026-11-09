@@ -90,6 +90,18 @@ features:
   verhalten:
   - Regeln wie BPM-Bereich, Tonart (auch passende Tonarten zum Mixen), Genre, neu, nie gehört oder Sterne.
   - Tonregal spielt sie selbst ab.
+- titel: Eigene Playlists
+  wozu: Listen für einen Anlass selbst zusammenstellen, in genau der Reihenfolge, die man will.
+  verhalten:
+  - Ein Lesezeichen am Album, an jedem Stück, im großen Player und in der Warteschlange legt Stücke in eine Playlist,
+    auf Wunsch gleich in eine neue. Was schon darin steht, kommt nicht doppelt hinein.
+  - Stücke lassen sich per Ziehen oder Pfeiltasten umsortieren und wieder entfernen; abspielen, zufällig abspielen
+    oder an die Warteschlange hängen.
+  - Die Warteschlange lässt sich als Ganzes als Playlist sichern.
+  - Jede Playlist liegt zusätzlich als `.m3u8`-Datei in der Bibliothek und ist damit gesichert und für andere Player
+    lesbar.
+  - Bekommt ein Stück beim Aufräumen der Tags ein neues Album, bleibt es in der Playlist.
+  - Auch in der App fürs iPhone und iPad, mit Umsortieren und „Zur Playlist …“ an Alben, Titeln und im Player.
 - titel: Download
   wozu: Die Musik dorthin mitnehmen, wo Tonregal nicht ist.
   verhalten:
@@ -117,12 +129,13 @@ roadmap:
     und gehen mit ins Backup. Die vorhandenen Sterne aus Navidrome werden übernommen, Navidrome bekommt jede neue
     Bewertung als Kopie für seine Smart Playlists; gebaut, noch nicht im Betrieb'
   - Suche über Titel, Alben und Interpreten im Browser und in der iPhone-App; gebaut, noch nicht im Betrieb
+  - 'Eigene Playlists im Browser und in der iPhone-App: von Hand zusammenstellen, sortieren und abspielen; gebaut, noch
+    nicht im Betrieb'
   als_naechstes:
-  - 'Eigene Playlists: von Hand zusammenstellen, sortieren und abspielen, neben den Smart Playlists'
   - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
     Album; die Änderung landet in der Datei'
   - Die Sterne zusätzlich in die Datei schreiben, damit sie wie alle anderen Angaben in den Tags stehen
-  - In der iPhone-App Playlists, Offline-Wiedergabe und CarPlay
+  - In der iPhone-App Offline-Wiedergabe und CarPlay
   - 'Lokalisierung: Web-Player und App in weiteren Sprachen'
 steckbrief:
 - name: Plattform
