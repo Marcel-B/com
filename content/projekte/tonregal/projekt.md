@@ -67,6 +67,13 @@ features:
   - Warteschlange, Sterne, Zufall für Album, Interpret oder die ganze Bibliothek und Wiederholen.
   - Steuerung über Sperrbildschirm und Kopfhörertasten.
   - Lässt sich im iPhone-Safari auf den Home-Bildschirm legen.
+- titel: Suche
+  wozu: Ein Stück finden, ohne zu wissen, auf welchem Album es liegt.
+  verhalten:
+  - Ein Suchfeld findet Titel, Alben und Interpreten zugleich, im Browser und in der iPhone-App.
+  - Mehrere Wörter dürfen sich auf Titel, Interpret und Album verteilen; „beatles help“ findet *Help!*.
+  - Groß- und Kleinschreibung, Akzente und Satzzeichen zählen nicht, „beyonce“ findet *Beyoncé* und „acdc“ *AC/DC*.
+  - Ein Treffer spielt sofort, danach laufen die übrigen Treffer weiter; einzelne lassen sich als Nächstes einreihen.
 - titel: Großer Player
   wozu: Ein Bildschirm nur für das, was gerade läuft.
   verhalten:
@@ -106,6 +113,7 @@ roadmap:
   - 'Überwachung: Inbox, Scans, Analyse, Backup und das Protokoll auf einer gemeinsamen Übersicht, mit Alarm, wenn das
     Backup ausbleibt; gebaut, noch nicht im Betrieb'
   - Beschädigte alte Dateien lesen und beim Übernehmen neu verpacken; gebaut, mit den echten Dateien noch nicht erprobt
+  - Suche über Titel, Alben und Interpreten im Browser und in der iPhone-App; gebaut, noch nicht im Betrieb
   als_naechstes:
   - 'Eigene Playlists: von Hand zusammenstellen, sortieren und abspielen, neben den Smart Playlists'
   - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
