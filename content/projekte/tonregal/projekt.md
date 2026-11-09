@@ -113,13 +113,15 @@ roadmap:
   - 'Überwachung: Inbox, Scans, Analyse, Backup und das Protokoll auf einer gemeinsamen Übersicht, mit Alarm, wenn das
     Backup ausbleibt; gebaut, noch nicht im Betrieb'
   - Beschädigte alte Dateien lesen und beim Übernehmen neu verpacken; gebaut, mit den echten Dateien noch nicht erprobt
+  - 'Bewertung ohne Navidrome: Tonregal hält die Sterne selbst, sie gelten sofort, auch für gerade übernommene Stücke,
+    und gehen mit ins Backup. Die vorhandenen Sterne aus Navidrome werden übernommen, Navidrome bekommt jede neue
+    Bewertung als Kopie für seine Smart Playlists; gebaut, noch nicht im Betrieb'
   - Suche über Titel, Alben und Interpreten im Browser und in der iPhone-App; gebaut, noch nicht im Betrieb
   als_naechstes:
   - 'Eigene Playlists: von Hand zusammenstellen, sortieren und abspielen, neben den Smart Playlists'
   - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
     Album; die Änderung landet in der Datei'
-  - 'Bewertung ohne Navidrome: Tonregal hält die Sterne selbst und schreibt sie in die Datei, die vorhandenen werden
-    übernommen'
+  - Die Sterne zusätzlich in die Datei schreiben, damit sie wie alle anderen Angaben in den Tags stehen
   - In der iPhone-App Playlists, Offline-Wiedergabe und CarPlay
   - 'Lokalisierung: Web-Player und App in weiteren Sprachen'
 steckbrief:
@@ -138,6 +140,6 @@ lässt sich jederzeit aus der Bibliothek neu aufbauen.
 
 ASP.NET Core (.NET 10) mit EF Core und SQLite, SignalR für Live-Updates, ein Vue-3-Frontend mit Pinia, Tailwind CSS und
 PrimeVue, eine SwiftUI-App. Fingerprint, Analyse und Sicherung laufen über eigenständige Werkzeuge wie Chromaprint,
-librosa, ffmpeg, rsgain und rclone. Im Hintergrund zählt Navidrome die Wiedergaben und hält die Sterne. Neue Versionen
+librosa, ffmpeg, rsgain und rclone. Im Hintergrund zählt Navidrome die Wiedergaben; die Sterne hält Tonregal künftig selbst und reicht sie an Navidrome weiter. Neue Versionen
 spielt der Mac mini von selbst ein, sobald gerade nichts importiert, analysiert oder gesichert wird; die iPhone-App geht
 dabei automatisch an TestFlight.
