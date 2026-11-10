@@ -103,6 +103,18 @@ features:
     lesbar.
   - Bekommt ein Stück beim Aufräumen der Tags ein neues Album, bleibt es in der Playlist.
   - Auch in der App fürs iPhone und iPad, mit Umsortieren und „Zur Playlist …“ an Alben, Titeln und im Player.
+- titel: Tag-Editor
+  wozu: Falsch geschriebene Namen, fehlende Jahre oder ein schlechtes Cover direkt im Browser richten.
+  verhalten:
+  - Auf der Albumseite lassen sich Album, Album-Interpret, Jahr, Genre und Cover für alle Stücke ändern, an jedem Stück
+    Titel, Interpreten, Nummer, Disc, Album, Jahr und Genre.
+  - Die Änderung landet in der Datei selbst. Tonregal schreibt erst in eine Kopie, prüft sie und ersetzt dann das
+    Original.
+  - Ändert sich, was den Platz bestimmt, etwa der Interpret oder das Jahr, zieht die Datei an ihren neuen Ort; Songtext
+    und Cover gehen mit, ein leerer alter Ordner verschwindet.
+  - Sterne und Playlists bleiben am Stück, auch wenn es dabei in ein anderes Album wandert.
+  - Ein neuer Album-Interpret nimmt die Stücke mit, die er selbst singt; Gäste bleiben, wie sie sind.
+  - Ein eigenes Cover (JPEG oder PNG) liegt danach im Albumordner und steckt in jeder Datei.
 - titel: Download
   wozu: Die Musik dorthin mitnehmen, wo Tonregal nicht ist.
   verhalten:
@@ -126,16 +138,10 @@ roadmap:
   - 'Überwachung: Inbox, Scans, Analyse, Backup und das Protokoll auf einer gemeinsamen Übersicht, mit Alarm, wenn das
     Backup ausbleibt; gebaut, noch nicht im Betrieb'
   - Beschädigte alte Dateien lesen und beim Übernehmen neu verpacken; gebaut, mit den echten Dateien noch nicht erprobt
-  - 'Bewertung ohne Navidrome: Tonregal hält die Sterne selbst, sie gelten sofort, auch für gerade übernommene Stücke,
-    und gehen mit ins Backup. Die vorhandenen Sterne aus Navidrome werden übernommen, Navidrome bekommt jede neue
-    Bewertung als Kopie für seine Smart Playlists; gebaut, noch nicht im Betrieb'
-  - Suche über Titel, Alben und Interpreten im Browser und in der iPhone-App; gebaut, noch nicht im Betrieb
-  - 'Eigene Playlists im Browser und in der iPhone-App: von Hand zusammenstellen, sortieren und abspielen; gebaut, noch
-    nicht im Betrieb'
   - Eine tanzende 3D-Figur im großen Player im Browser; gebaut, noch nicht im Betrieb
-  als_naechstes:
   - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
-    Album; die Änderung landet in der Datei'
+    Album; die Änderung landet in der Datei; gebaut, noch nicht im Betrieb'
+  als_naechstes:
   - Die Sterne zusätzlich in die Datei schreiben, damit sie wie alle anderen Angaben in den Tags stehen
   - In der iPhone-App Offline-Wiedergabe und CarPlay
   - 'Lokalisierung: Web-Player und App in weiteren Sprachen'
@@ -155,6 +161,6 @@ lässt sich jederzeit aus der Bibliothek neu aufbauen.
 
 ASP.NET Core (.NET 10) mit EF Core und SQLite, SignalR für Live-Updates, ein Vue-3-Frontend mit Pinia, Tailwind CSS und
 PrimeVue, eine SwiftUI-App. Fingerprint, Analyse und Sicherung laufen über eigenständige Werkzeuge wie Chromaprint,
-librosa, ffmpeg, rsgain und rclone. Im Hintergrund zählt Navidrome die Wiedergaben; die Sterne hält Tonregal künftig selbst und reicht sie an Navidrome weiter. Neue Versionen
+librosa, ffmpeg, rsgain und rclone. Im Hintergrund zählt Navidrome die Wiedergaben; die Sterne hält Tonregal selbst und reicht sie an Navidrome weiter. Neue Versionen
 spielt der Mac mini von selbst ein, sobald gerade nichts importiert, analysiert oder gesichert wird; die iPhone-App geht
 dabei automatisch an TestFlight.

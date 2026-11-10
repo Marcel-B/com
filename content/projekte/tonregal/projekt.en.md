@@ -94,6 +94,18 @@ features:
   - Every playlist is also kept as an `.m3u8` file in the library, so it is backed up and readable by other players.
   - If a track gets a new album while its tags are tidied up, it stays in the playlist.
   - Also in the app for iPhone and iPad, with reordering and "Add to playlist …" on albums, tracks and in the player.
+- titel: Tag editor
+  wozu: Fix misspelt names, missing years or a poor cover right in the browser.
+  verhalten:
+  - On the album page you can change album, album artist, year, genre and cover for all tracks, and on each track its
+    title, artists, number, disc, album, year and genre.
+  - The change goes into the file itself. Tonregal writes to a copy first, checks it and only then replaces the
+    original.
+  - If what decides a file's place changes, such as the artist or the year, the file moves to its new spot; lyrics and
+    cover go along, and an empty old folder disappears.
+  - Stars and playlists stay with the track, even when it moves to another album.
+  - A new album artist takes along the tracks they sing themselves; guests stay as they are.
+  - Your own cover (JPEG or PNG) then sits in the album folder and inside every file.
 - titel: Download
   wozu: Take the music where Tonregal is not.
   verhalten:
@@ -117,16 +129,10 @@ roadmap:
   - 'Monitoring: inbox, scans, analysis, backup and the log on a shared overview, with an alert when the backup does not
     run; built, not yet in operation'
   - Read damaged old files and repackage them on filing; built, not yet tried with the real files
-  - 'Ratings without Navidrome: Tonregal keeps the stars itself; they apply at once, also to freshly filed tracks, and go
-    into the backup. The existing stars from Navidrome are carried over, and Navidrome gets a copy of every new rating
-    for its smart playlists; built, not yet in operation'
-  - Search across tracks, albums and artists in the browser and the iPhone app; built, not yet in operation
-  - 'Your own playlists in the browser and the iPhone app: put together, sort and play by hand; built, not yet in
-    operation'
   - A dancing 3D figure in the full-screen player in the browser; built, not yet in operation
-  als_naechstes:
   - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
-    the change goes into the file'
+    the change goes into the file; built, not yet in operation'
+  als_naechstes:
   - Also write the stars into the file, so they sit in the tags like everything else
   - Offline playback and CarPlay in the iPhone app
   - 'Localisation: web player and app in more languages'
@@ -146,5 +152,5 @@ rebuilt from the library at any time.
 
 ASP.NET Core (.NET 10) with EF Core and SQLite, SignalR for live updates, a Vue 3 frontend with Pinia, Tailwind CSS and
 PrimeVue, a SwiftUI app. Fingerprinting, analysis and backup use standalone tools such as Chromaprint, librosa, ffmpeg,
-rsgain and rclone. In the background Navidrome counts plays; the stars will be kept by Tonregal itself and passed on to Navidrome. The Mac mini installs new versions by
+rsgain and rclone. In the background Navidrome counts plays; Tonregal keeps the stars itself and passes them on to Navidrome. The Mac mini installs new versions by
 itself as soon as nothing is being imported, analysed or backed up; the iPhone app goes to TestFlight automatically.
