@@ -67,12 +67,20 @@ features:
   - Warteschlange, Sterne, Zufall für Album, Interpret oder die ganze Bibliothek und Wiederholen.
   - Steuerung über Sperrbildschirm und Kopfhörertasten.
   - Lässt sich im iPhone-Safari auf den Home-Bildschirm legen.
+- titel: Suche
+  wozu: Ein Stück finden, ohne zu wissen, auf welchem Album es liegt.
+  verhalten:
+  - Ein Suchfeld findet Titel, Alben und Interpreten zugleich, im Browser und in der iPhone-App.
+  - Mehrere Wörter dürfen sich auf Titel, Interpret und Album verteilen; „beatles help“ findet *Help!*.
+  - Groß- und Kleinschreibung, Akzente und Satzzeichen zählen nicht, „beyonce“ findet *Beyoncé* und „acdc“ *AC/DC*.
+  - Ein Treffer spielt sofort, danach laufen die übrigen Treffer weiter; einzelne lassen sich als Nächstes einreihen.
 - titel: Großer Player
   wozu: Ein Bildschirm nur für das, was gerade läuft.
   verhalten:
   - Das Cover groß auf einem unscharfen Hintergrund in seinen Farben, dazu Sterne und Fortschritt mit Restzeit.
   - Songtext neben oder statt des Covers, eine Warteschlange zum Umsortieren per Ziehen.
   - Nach dem Neuladen geht es an derselben Stelle im Stück weiter.
+  - Zum Spaß tanzt vor dem Cover eine kleine 3D-Figur, solange Musik läuft, und bleibt bei Pause stehen; abschaltbar.
 - titel: Songtexte
   wozu: Mitlesen, wo man im Stück ist.
   verhalten:
@@ -83,6 +91,30 @@ features:
   verhalten:
   - Regeln wie BPM-Bereich, Tonart (auch passende Tonarten zum Mixen), Genre, neu, nie gehört oder Sterne.
   - Tonregal spielt sie selbst ab.
+- titel: Eigene Playlists
+  wozu: Listen für einen Anlass selbst zusammenstellen, in genau der Reihenfolge, die man will.
+  verhalten:
+  - Ein Lesezeichen am Album, an jedem Stück, im großen Player und in der Warteschlange legt Stücke in eine Playlist,
+    auf Wunsch gleich in eine neue. Was schon darin steht, kommt nicht doppelt hinein.
+  - Stücke lassen sich per Ziehen oder Pfeiltasten umsortieren und wieder entfernen; abspielen, zufällig abspielen
+    oder an die Warteschlange hängen.
+  - Die Warteschlange lässt sich als Ganzes als Playlist sichern.
+  - Jede Playlist liegt zusätzlich als `.m3u8`-Datei in der Bibliothek und ist damit gesichert und für andere Player
+    lesbar.
+  - Bekommt ein Stück beim Aufräumen der Tags ein neues Album, bleibt es in der Playlist.
+  - Auch in der App fürs iPhone und iPad, mit Umsortieren und „Zur Playlist …“ an Alben, Titeln und im Player.
+- titel: Tag-Editor
+  wozu: Falsch geschriebene Namen, fehlende Jahre oder ein schlechtes Cover direkt im Browser richten.
+  verhalten:
+  - Auf der Albumseite lassen sich Album, Album-Interpret, Jahr, Genre und Cover für alle Stücke ändern, an jedem Stück
+    Titel, Interpreten, Nummer, Disc, Album, Jahr und Genre.
+  - Die Änderung landet in der Datei selbst. Tonregal schreibt erst in eine Kopie, prüft sie und ersetzt dann das
+    Original.
+  - Ändert sich, was den Platz bestimmt, etwa der Interpret oder das Jahr, zieht die Datei an ihren neuen Ort; Songtext
+    und Cover gehen mit, ein leerer alter Ordner verschwindet.
+  - Sterne und Playlists bleiben am Stück, auch wenn es dabei in ein anderes Album wandert.
+  - Ein neuer Album-Interpret nimmt die Stücke mit, die er selbst singt; Gäste bleiben, wie sie sind.
+  - Ein eigenes Cover (JPEG oder PNG) liegt danach im Albumordner und steckt in jeder Datei.
 - titel: Download
   wozu: Die Musik dorthin mitnehmen, wo Tonregal nicht ist.
   verhalten:
@@ -106,13 +138,12 @@ roadmap:
   - 'Überwachung: Inbox, Scans, Analyse, Backup und das Protokoll auf einer gemeinsamen Übersicht, mit Alarm, wenn das
     Backup ausbleibt; gebaut, noch nicht im Betrieb'
   - Beschädigte alte Dateien lesen und beim Übernehmen neu verpacken; gebaut, mit den echten Dateien noch nicht erprobt
-  als_naechstes:
-  - 'Eigene Playlists: von Hand zusammenstellen, sortieren und abspielen, neben den Smart Playlists'
+  - Eine tanzende 3D-Figur im großen Player im Browser; gebaut, noch nicht im Betrieb
   - 'Tag-Editor: Titel, Interpret, Album, Jahr, Genre und Cover im Browser ändern, für einen Titel oder ein ganzes
-    Album; die Änderung landet in der Datei'
-  - 'Bewertung ohne Navidrome: Tonregal hält die Sterne selbst und schreibt sie in die Datei, die vorhandenen werden
-    übernommen'
-  - In der iPhone-App Playlists, Offline-Wiedergabe und CarPlay
+    Album; die Änderung landet in der Datei; gebaut, noch nicht im Betrieb'
+  als_naechstes:
+  - Die Sterne zusätzlich in die Datei schreiben, damit sie wie alle anderen Angaben in den Tags stehen
+  - In der iPhone-App Offline-Wiedergabe und CarPlay
   - 'Lokalisierung: Web-Player und App in weiteren Sprachen'
 steckbrief:
 - name: Plattform
@@ -130,6 +161,6 @@ lässt sich jederzeit aus der Bibliothek neu aufbauen.
 
 ASP.NET Core (.NET 10) mit EF Core und SQLite, SignalR für Live-Updates, ein Vue-3-Frontend mit Pinia, Tailwind CSS und
 PrimeVue, eine SwiftUI-App. Fingerprint, Analyse und Sicherung laufen über eigenständige Werkzeuge wie Chromaprint,
-librosa, ffmpeg, rsgain und rclone. Im Hintergrund zählt Navidrome die Wiedergaben und hält die Sterne. Neue Versionen
+librosa, ffmpeg, rsgain und rclone. Im Hintergrund zählt Navidrome die Wiedergaben; die Sterne hält Tonregal selbst und reicht sie an Navidrome weiter. Neue Versionen
 spielt der Mac mini von selbst ein, sobald gerade nichts importiert, analysiert oder gesichert wird; die iPhone-App geht
 dabei automatisch an TestFlight.

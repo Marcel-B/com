@@ -59,12 +59,21 @@ features:
   - Queue, stars, shuffle by album, artist or the whole library, and repeat.
   - Control from the lock screen and headphone buttons.
   - Can be added to the home screen in iPhone Safari.
+- titel: Search
+  wozu: Find a track without knowing which album it is on.
+  verhalten:
+  - One search field finds tracks, albums and artists at once, in the browser and in the iPhone app.
+  - Several words may be spread over title, artist and album; “beatles help” finds *Help!*.
+  - Upper and lower case, accents and punctuation do not matter, “beyonce” finds *Beyoncé* and “acdc” *AC/DC*.
+  - A result plays straight away, followed by the other results; single ones can be queued to play next.
 - titel: Full-screen player
   wozu: A screen just for what is playing.
   verhalten:
   - The cover large on a blurred background in its colours, with stars and progress with time left.
   - Lyrics beside or instead of the cover, a queue to rearrange by dragging.
   - After a reload it continues at the same point in the track.
+  - Just for fun, a small 3D figure dances in front of the cover while music plays and stands still when paused; it can
+    be switched off.
 - titel: Lyrics
   wozu: Read along where you are in the track.
   verhalten:
@@ -75,6 +84,28 @@ features:
   verhalten:
   - Rules such as BPM range, key (including matching keys for mixing), genre, new, never played or stars.
   - Tonregal plays them itself.
+- titel: Your own playlists
+  wozu: Put together lists for an occasion yourself, in exactly the order you want.
+  verhalten:
+  - A bookmark on the album, on every track, in the full-screen player and in the queue puts tracks into a playlist,
+    or straight into a new one. Whatever is already in it does not go in twice.
+  - Tracks can be reordered by dragging or with the arrow keys and removed again; play, shuffle or add to the queue.
+  - The whole queue can be saved as a playlist.
+  - Every playlist is also kept as an `.m3u8` file in the library, so it is backed up and readable by other players.
+  - If a track gets a new album while its tags are tidied up, it stays in the playlist.
+  - Also in the app for iPhone and iPad, with reordering and "Add to playlist …" on albums, tracks and in the player.
+- titel: Tag editor
+  wozu: Fix misspelt names, missing years or a poor cover right in the browser.
+  verhalten:
+  - On the album page you can change album, album artist, year, genre and cover for all tracks, and on each track its
+    title, artists, number, disc, album, year and genre.
+  - The change goes into the file itself. Tonregal writes to a copy first, checks it and only then replaces the
+    original.
+  - If what decides a file's place changes, such as the artist or the year, the file moves to its new spot; lyrics and
+    cover go along, and an empty old folder disappears.
+  - Stars and playlists stay with the track, even when it moves to another album.
+  - A new album artist takes along the tracks they sing themselves; guests stay as they are.
+  - Your own cover (JPEG or PNG) then sits in the album folder and inside every file.
 - titel: Download
   wozu: Take the music where Tonregal is not.
   verhalten:
@@ -98,13 +129,12 @@ roadmap:
   - 'Monitoring: inbox, scans, analysis, backup and the log on a shared overview, with an alert when the backup does not
     run; built, not yet in operation'
   - Read damaged old files and repackage them on filing; built, not yet tried with the real files
-  als_naechstes:
-  - 'Your own playlists: put together, sort and play by hand, alongside the smart playlists'
+  - A dancing 3D figure in the full-screen player in the browser; built, not yet in operation
   - 'Tag editor: change title, artist, album, year, genre and cover in the browser, for one track or a whole album;
-    the change goes into the file'
-  - 'Ratings without Navidrome: Tonregal keeps the stars itself and writes them into the file, existing ones are
-    carried over'
-  - Playlists, offline playback and CarPlay in the iPhone app
+    the change goes into the file; built, not yet in operation'
+  als_naechstes:
+  - Also write the stars into the file, so they sit in the tags like everything else
+  - Offline playback and CarPlay in the iPhone app
   - 'Localisation: web player and app in more languages'
 steckbrief:
 - name: Platform
@@ -122,5 +152,5 @@ rebuilt from the library at any time.
 
 ASP.NET Core (.NET 10) with EF Core and SQLite, SignalR for live updates, a Vue 3 frontend with Pinia, Tailwind CSS and
 PrimeVue, a SwiftUI app. Fingerprinting, analysis and backup use standalone tools such as Chromaprint, librosa, ffmpeg,
-rsgain and rclone. In the background Navidrome counts plays and keeps the stars. The Mac mini installs new versions by
+rsgain and rclone. In the background Navidrome counts plays; Tonregal keeps the stars itself and passes them on to Navidrome. The Mac mini installs new versions by
 itself as soon as nothing is being imported, analysed or backed up; the iPhone app goes to TestFlight automatically.
