@@ -70,6 +70,9 @@ features:
   - Das Farbschema ist hell, dunkel oder folgt dem System; beide Wahlen merkt sich der Browser.
 roadmap:
   jetzt:
+  - 'Schnittstelle für andere Programme: aus einem Bild ein GLB bestellen, etwa für ein Spiel, das aus jedem
+    Spielerbild einen Kopf macht, in einer festen Form (ein Netz, Ursprung am Hals, Maße in Metern); mit dem echten
+    Modell ausprobieren'
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
   spaeter:
   - Farbige Druckdateien für Drucker mit mehreren Filamenten

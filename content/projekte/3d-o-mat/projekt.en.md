@@ -62,6 +62,9 @@ features:
   - The colour scheme is light, dark or follows the system; the browser remembers both choices.
 roadmap:
   jetzt:
+  - 'An interface for other programs: order a GLB from a picture, for example for a game that turns every player''s
+    picture into a head, in a fixed shape (one mesh, origin at the neck, sizes in metres); to be tried with the real
+    model'
   - 'Localisation: server messages and error texts in English too'
   spaeter:
   - Colour print files for printers with several filaments
