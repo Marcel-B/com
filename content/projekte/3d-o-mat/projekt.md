@@ -75,6 +75,9 @@ roadmap:
     Figur und in Godot ausprobieren'
   - Gelenke des Skeletts von Hand verschieben, wenn SkinTokens sie nicht genau trifft; mit echten Figuren ausprobieren
   - Nachricht über Onkel Bummel, wenn ein Modell oder Bild fertig ist, mit dem echten Dienst ausprobieren
+  - 'Schnittstelle für andere Programme: aus einem Bild ein GLB bestellen, etwa für ein Spiel, das aus jedem
+    Spielerbild einen Kopf macht, in einer festen Form (ein Netz, Ursprung am Hals, Maße in Metern); mit dem echten
+    Modell ausprobieren'
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
   spaeter:
   - Eigene Modelle hochladen und mit Skelett versehen

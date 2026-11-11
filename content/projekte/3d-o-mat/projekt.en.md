@@ -67,6 +67,9 @@ roadmap:
     Godot'
   - Move the skeleton's joints by hand where SkinTokens misses them; try it with real figures
   - Try the Onkel Bummel message for finished models and pictures with the real service
+  - 'An interface for other programs: order a GLB from a picture, for example for a game that turns every player''s
+    picture into a head, in a fixed shape (one mesh, origin at the neck, sizes in metres); to be tried with the real
+    model'
   - 'Localisation: server messages and error texts in English too'
   spaeter:
   - Uploading your own models and giving them a skeleton
