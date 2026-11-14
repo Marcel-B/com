@@ -78,9 +78,11 @@ roadmap:
   - 'Schnittstelle für andere Programme: aus einem Bild ein GLB bestellen, etwa für ein Spiel, das aus jedem
     Spielerbild einen Kopf macht, in einer festen Form (ein Netz, Ursprung am Hals, Maße in Metern); mit dem echten
     Modell ausprobieren'
+  - 'Eigene Figur importieren: GLB, glTF oder OBJ samt Texturen hochladen, ansehen, drucken und mit Skelett versehen;
+    eine Figur mit Mixamo-Skelett bewegt sich gleich mit der Bibliothek; mit echten Figuren auf dem Mac ausprobieren'
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
   spaeter:
-  - Eigene Modelle hochladen und mit Skelett versehen
+  - Figuren auch als FBX importieren, und Skelette mit anderen Namen als Mixamo gleich bewegen
   - Eine Bewegung beschreiben, und ein Modell erzeugt sie
   - Farbige Druckdateien für Drucker mit mehreren Filamenten
   - Warnung vor Stellen, die zum Drucken zu dünn sind
