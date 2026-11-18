@@ -82,6 +82,9 @@ roadmap:
     und Modelle als GLB, 3MF oder STL holt; mit dem echten Dienst ausprobieren'
   - 'Eigene Figur importieren: GLB, glTF oder OBJ samt Texturen hochladen, ansehen, drucken und mit Skelett versehen;
     eine Figur mit Mixamo-Skelett bewegt sich gleich mit der Bibliothek; mit echten Figuren auf dem Mac ausprobieren'
+  - 'FBX für Unity und Unreal: jedes Modell und die Animationen aus Proben und Bibliothek auch als FBX herunterladen,
+    mit Skelett, Gewichten und jeder Animation als eigenem Clip, in Metern für Unity oder Zentimetern für Unreal;
+    umgewandelt von Blender im Container; in Unity und Unreal ausprobieren'
   - 'Lokalisierung: Meldungen und Fehlertexte des Servers auch auf Englisch'
   spaeter:
   - Figuren auch als FBX importieren, und Skelette mit anderen Namen als Mixamo gleich bewegen
