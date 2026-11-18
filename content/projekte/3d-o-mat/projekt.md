@@ -78,6 +78,8 @@ roadmap:
   - 'Schnittstelle für andere Programme: aus einem Bild ein GLB bestellen, etwa für ein Spiel, das aus jedem
     Spielerbild einen Kopf macht, in einer festen Form (ein Netz, Ursprung am Hals, Maße in Metern); mit dem echten
     Modell ausprobieren'
+  - 'Für Agents: 3d-o-mat als MCP-Server, damit etwa Claude Code Bilder hochlädt, in 3D umwandelt, Skelette einsetzt
+    und Modelle als GLB, FBX, 3MF oder STL holt; mit dem echten Dienst ausprobieren'
   - 'Eigene Figur importieren: GLB, glTF oder OBJ samt Texturen hochladen, ansehen, drucken und mit Skelett versehen;
     eine Figur mit Mixamo-Skelett bewegt sich gleich mit der Bibliothek; mit echten Figuren auf dem Mac ausprobieren'
   - 'FBX für Unity und Unreal: jedes Modell und die Animationen aus Proben und Bibliothek auch als FBX herunterladen,
