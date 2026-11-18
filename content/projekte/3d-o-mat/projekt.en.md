@@ -72,6 +72,9 @@ roadmap:
     model'
   - 'Import your own figure: upload a GLB, glTF or OBJ with its textures, view it, print it and give it a skeleton; a
     figure with a Mixamo skeleton moves with the library right away; to be tried with real figures on the Mac'
+  - 'FBX for Unity and Unreal: download any model, and the animations from the test moves and the library, as FBX
+    too, with skeleton, weights and every animation as a clip of its own, in metres for Unity or centimetres for
+    Unreal; converted by Blender in the container; to be tried in Unity and Unreal'
   - 'Localisation: server messages and error texts in English too'
   spaeter:
   - Import figures as FBX too, and move skeletons with names other than Mixamo's right away
