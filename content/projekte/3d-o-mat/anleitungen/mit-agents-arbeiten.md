@@ -7,7 +7,7 @@ reihenfolge: 2
 
 3d-o-mat lässt sich nicht nur im Browser bedienen. Über das Model Context Protocol (MCP) kann auch ein Agent damit
 arbeiten, etwa Claude Code beim Bauen eines Spiels: ein Bild hochladen oder malen lassen, in 3D umwandeln, warten, ein
-Skelett einsetzen und das Modell als GLB, 3MF oder STL holen. Der MCP-Server ist Teil von 3d-o-mat selbst und läuft
+Skelett einsetzen und das Modell als GLB, 3MF, STL oder FBX holen. Der MCP-Server ist Teil von 3d-o-mat selbst und läuft
 unter derselben Adresse wie die Seite, unter `/mcp`. Auf deinem Rechner musst du nichts installieren außer dem Eintrag
 in Claude Code.
 
@@ -64,7 +64,7 @@ Die Werkzeuge im Überblick:
 | `write_image_prompts`, `paint_images`, `get_painting` | aus einer Idee Prompts schreiben und Bilder malen lassen |
 | `create_model`, `get_job`, `list_jobs`, `cancel_job` | Bild zu 3D, auf das Ergebnis warten, Aufträge ansehen und einen wartenden abbrechen |
 | `add_skeleton` | ein Skelett mit Mixamo-Namen einsetzen |
-| `export_model` | eine Download-Adresse für GLB oder eine Druckdatei (3MF, STL) |
+| `export_model` | eine Download-Adresse für GLB, FBX (Unity oder Unreal) oder eine Druckdatei (3MF, STL) |
 
 Große Dateien gehen nicht durch das Gespräch mit dem Agent: Er bekommt eine Adresse und lädt die Datei selbst herunter,
 und ein Bild von der Platte lädt er am besten ebenso direkt hoch.

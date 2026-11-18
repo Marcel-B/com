@@ -71,7 +71,7 @@ roadmap:
     picture into a head, in a fixed shape (one mesh, origin at the neck, sizes in metres); to be tried with the real
     model'
   - 'For agents: 3d-o-mat as an MCP server, so that Claude Code, for example, uploads pictures, turns them into 3D,
-    adds skeletons and fetches models as GLB, 3MF or STL; to be tried with the real service'
+    adds skeletons and fetches models as GLB, FBX, 3MF or STL; to be tried with the real service'
   - 'Import your own figure: upload a GLB, glTF or OBJ with its textures, view it, print it and give it a skeleton; a
     figure with a Mixamo skeleton moves with the library right away; to be tried with real figures on the Mac'
   - 'FBX for Unity and Unreal: download any model, and the animations from the test moves and the library, as FBX

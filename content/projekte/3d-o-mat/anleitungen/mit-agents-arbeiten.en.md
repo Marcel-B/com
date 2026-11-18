@@ -5,7 +5,7 @@ beschreibung: Add 3d-o-mat to Claude Code as an MCP server, so that an agent tur
 
 3d-o-mat is not only for the browser. Through the Model Context Protocol (MCP) an agent can work with it too, for
 example Claude Code while building a game: upload a picture or have one painted, turn it into 3D, wait, add a skeleton
-and fetch the model as GLB, 3MF or STL. The MCP server is part of 3d-o-mat itself and runs at the same address as the
+and fetch the model as GLB, 3MF, STL or FBX. The MCP server is part of 3d-o-mat itself and runs at the same address as the
 website, under `/mcp`. Nothing needs installing on your computer apart from the entry in Claude Code.
 
 ## What you need
@@ -61,7 +61,7 @@ The tools at a glance:
 | `write_image_prompts`, `paint_images`, `get_painting` | write prompts from an idea and have pictures painted |
 | `create_model`, `get_job`, `list_jobs`, `cancel_job` | picture to 3D, wait for the result, look at jobs and cancel a waiting one |
 | `add_skeleton` | add a skeleton with Mixamo bone names |
-| `export_model` | a download address for the GLB or a print file (3MF, STL) |
+| `export_model` | a download address for the GLB, an FBX (Unity or Unreal) or a print file (3MF, STL) |
 
 Large files do not go through the conversation with the agent: it gets an address and downloads the file itself, and
 it is best to let it upload a picture from disk directly as well.
